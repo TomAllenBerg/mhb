@@ -30,4 +30,18 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.button {
+  display: inline-block;
+  background: #000;
+  color: rosybrown;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: inherit; 
+}
 </style>
