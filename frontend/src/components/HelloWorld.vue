@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <SidebarButton text = "Prescriptions" color = "#fff0a5" page = "Prescription"/>
     <SidebarButton text = "Medical History" color = "#fff0a5" page = "About"/>
-    <SidebarButton text = "Doctors" color = "#fff0a5" page = "Prescription" />
+    <SidebarButton text = "Doctors" color = "#fff0a5" page = "Doctor" />
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
