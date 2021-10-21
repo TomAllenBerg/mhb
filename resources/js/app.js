@@ -4,12 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 //import App from './app.vue';
 
 window.Vue = require('vue').default;
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -33,9 +32,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
- 
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
 Vue.config.productionTip = false
- 
+
 new Vue({
     router,
     store,
