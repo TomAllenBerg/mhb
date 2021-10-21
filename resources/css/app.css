@@ -1,0 +1,9 @@
+body, html {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+}
+body {
+  background-color: #303c6c !important;
+}
