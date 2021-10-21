@@ -32,7 +32,12 @@ const routes = [
     path: '/doctor',
     name: 'Doctor',
     component: () => import(/* webpackChunkName: "about" */ '../views/Doctor.vue')
-  }
+    },
+   {
+        path: '/medical',
+        name: 'Medical History',
+        component: () => import(/* webpackChunkName: "about" */ '../views/MedicalHistory.vue')
+    }
 ]
 
 const router = new VueRouter({
