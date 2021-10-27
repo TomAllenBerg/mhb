@@ -8,14 +8,14 @@
        <b-form-group has-error>
          <h3>Login or <b>Sign-up</b></h3>
          <label for="Username"><strong>Username</strong></label>
-         <Input />
+         <Input inputPlaceholder="Username"/>
          <div class="invalid-feedback">
          </div>
        </b-form-group>
 
           <b-form-group has-error>
             <label for="Password"><strong>Password</strong></label>
-            <Input />
+            <Input inputPlaceholder="Password"/>
               <div class="invalid-feedback">
               </div>
           </b-form-group>
@@ -24,7 +24,7 @@
 
           </b-form-group>
 
-          <ButtonBlock />
+          <ButtonBlock  buttonBlockText="Log in" />
 
       </form>
       </div>
