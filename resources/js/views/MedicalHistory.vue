@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-        
+
 </template>
 
 <script>
@@ -85,14 +85,16 @@
         font-weight: bold;
     }
     .ColorWrapper {
+      margin-top: 25px;
         background: #d2fdff;
         padding: 1.5em;
-        width: 230px;
+        width: 350px;
+        margin-left: 450px !important;
     }
     .Conditions {
-        max-height: 200px;
+        max-height: 300px;
         overflow: auto;
-        width: 175px;
+        width: 295px;
         background-color: #b4dfe5;
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         padding: 30px;
