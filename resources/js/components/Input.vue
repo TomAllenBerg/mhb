@@ -1,12 +1,15 @@
 <template>
 <div>
-  <b-form-input class="darkBlueInput" placeholder="Password" required="required"></b-form-input>
+  <b-form-input class="darkBlueInput" :placeholder="inputPlaceholder" required="required"></b-form-input>
 </div>
 </template>
 
 <script>
 export default {
   name: "Input",
+  props: {
+    inputPlaceholder: String
+  },
 };
 </script>
 

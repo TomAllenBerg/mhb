@@ -18,7 +18,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ButtonBlock"
+  name: "ButtonBlock",
+  props: {
+    buttonBlockText: String
+  }
 });
 
 /***/ }),
@@ -41,7 +44,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Input"
+  name: "Input",
+  props: {
+    inputPlaceholder: String
+  }
 });
 
 /***/ }),
@@ -1522,7 +1528,7 @@ var render = function() {
           staticClass: "darkBlue",
           attrs: { variant: "primary btn-block", value: "login" }
         },
-        [_vm._v("Log in")]
+        [_vm._v(_vm._s(_vm.buttonBlockText))]
       )
     ],
     1
@@ -1556,7 +1562,7 @@ var render = function() {
     [
       _c("b-form-input", {
         staticClass: "darkBlueInput",
-        attrs: { placeholder: "Password", required: "required" }
+        attrs: { placeholder: _vm.inputPlaceholder, required: "required" }
       })
     ],
     1
@@ -1603,7 +1609,7 @@ var render = function() {
                     _c("strong", [_vm._v("Username")])
                   ]),
                   _vm._v(" "),
-                  _c("Input"),
+                  _c("Input", { attrs: { inputPlaceholder: "Username" } }),
                   _vm._v(" "),
                   _c("div", { staticClass: "invalid-feedback" })
                 ],
@@ -1618,7 +1624,7 @@ var render = function() {
                     _c("strong", [_vm._v("Password")])
                   ]),
                   _vm._v(" "),
-                  _c("Input"),
+                  _c("Input", { attrs: { inputPlaceholder: "Password" } }),
                   _vm._v(" "),
                   _c("div", { staticClass: "invalid-feedback" })
                 ],
@@ -1627,7 +1633,7 @@ var render = function() {
               _vm._v(" "),
               _c("b-form-group", { attrs: { "has-error": "" } }),
               _vm._v(" "),
-              _c("ButtonBlock")
+              _c("ButtonBlock", { attrs: { buttonBlockText: "Log in" } })
             ],
             1
           )

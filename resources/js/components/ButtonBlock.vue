@@ -1,12 +1,15 @@
 <template>
 <div>
-  <b-button class="darkBlue" variant="primary btn-block" value="login">Log in</b-button>
+  <b-button class="darkBlue" variant="primary btn-block" value="login">{{buttonBlockText}}</b-button>
 </div>
 </template>
 
 <script>
 export default {
   name: "ButtonBlock",
+  props: {
+    buttonBlockText: String
+  },
 };
 </script>
 
