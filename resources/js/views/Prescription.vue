@@ -1,5 +1,6 @@
 <template>
   <div class="prescription">
+    <Sidebar/>
     <h1>This is the prescription page</h1>
     <b-container class="bv-example-row">
       <b-row>
@@ -16,13 +17,14 @@
 </style>
 
 <script>
-// @ is an alias to /src
 import LoginCard from '../components/LoginCard.vue';
+import Sidebar from '../components/Sidebar.vue'
 
 export default {
   name: 'Prescription',
   components: {
-    LoginCard
+    LoginCard,
+    Sidebar
   },
 };
 </script>

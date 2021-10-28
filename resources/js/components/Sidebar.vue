@@ -1,8 +1,9 @@
 <template>
-  <div class="Sidebar">
-    <SidebarButton text = "Prescriptions" color = "#fff0a5" page = "Prescription"/>
-    <SidebarButton text = "Medical History" color = "#fff0a5" page = "About"/>
-    <SidebarButton text = "Doctors" color = "#fff0a5" page = "Doctor" />
+  <div class="sidebar">
+    <SidebarButton text = "Home" page = "/" imageSource = "DefaultIcon.png"/>
+    <SidebarButton text = "About" page = "about" imageSource = "DefaultIcon.png"/>
+    <SidebarButton text = "Prescriptions" page = "prescription" imageSource = "PrescriptionIcon.png"/>
+    <SidebarButton text = "Medical History" page = "medical" imageSource = "DefaultIcon.png"/>
   </div>
 </template>
 
@@ -17,20 +18,15 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.sidebar {
+  height: 100%; 
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #fff950;
+  overflow-x: hidden;
 }
 </style>

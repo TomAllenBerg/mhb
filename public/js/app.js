@@ -21,6 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Sidebar',
@@ -46,12 +47,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SidebarButton',
   props: {
     text: String,
-    color: String,
-    page: String
+    page: String,
+    imageSource: String
   }
 });
 
@@ -78,7 +83,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// @ is an alias to /src
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Home',
@@ -42516,7 +42520,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\r\n  font-family: Avenir, Helvetica, Arial, sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #white;\r\n  background-color: #303c6c;\r\n  min-height: 100vh;\r\n  margin: 0;\n}\n#nav {\r\n  padding: 30px;\n}\n#nav a {\r\n  font-weight: bold;\r\n  color: white;\n}\n#nav a.router-link-exact-active {\r\n  color: #42b983;\n}\n.button {\r\n  display: inline-block;\r\n  background: #000;\r\n  color: rosybrown;\r\n  border: none;\r\n  padding: 10px 20px;\r\n  margin: 5px;\r\n  border-radius: 0px;\r\n  cursor: pointer;\r\n  text-decoration: none;\r\n  font-size: 30px;\r\n  font-family: inherit;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\r\n  font-family: Avenir, Helvetica, Arial, sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #white;\r\n  background-color: #303c6c;\r\n  min-height: 100vh;\r\n  margin: 0;\n}\n#nav {\r\n  padding: 30px;\n}\n#nav a {\r\n  font-weight: bold;\r\n  color: white;\n}\n#nav a.router-link-exact-active {\r\n  color: #42b983;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42540,7 +42544,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nh3[data-v-81fbb27e] {\r\n  margin: 40px 0 0;\n}\nul[data-v-81fbb27e] {\r\n  list-style-type: none;\r\n  padding: 0;\n}\nli[data-v-81fbb27e] {\r\n  display: inline-block;\r\n  margin: 0 10px;\n}\na[data-v-81fbb27e] {\r\n  color: #42b983;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sidebar[data-v-81fbb27e] {\r\n  height: 100%; \r\n  width: 130px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background: #fff950;\r\n  overflow-x: hidden;\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.squareButton[data-v-0af8835a] {\r\n    display: block;\r\n    color: #111;\r\n    background: #ffffff00;\r\n    border: none;\r\n    width: 130px;\r\n    height: 130px;\r\n    cursor: pointer;\r\n    font-size: 17px;\r\n    position: relative;\n}\n.pageImage[data-v-0af8835a]{\r\n    max-width: 85px;\r\n    max-height: 85px;\n}\n.buttonText[data-v-0af8835a]{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    width: 100%;\r\n    left: 0%\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42654,6 +42682,36 @@ module.exports = function (cssWithMappingToString) {
 /***/ ((module) => {
 
 module.exports = "/images/fav.png?c70133712346438bc35c6817516e40c0";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/DefaultIcon.png":
+/*!**********************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/DefaultIcon.png ***!
+  \**********************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/DefaultIcon.png?95e1c07e1fc2dc41ffbabcc82afcf31e";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/DoctorIcon.png":
+/*!*********************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/DoctorIcon.png ***!
+  \*********************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/DoctorIcon.png?7acf0e159822118fa6ffb231d0568753";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/PrescriptionIcon.png":
+/*!***************************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/PrescriptionIcon.png ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/PrescriptionIcon.png?1bd6a1a6528056943e4c8ba8283d209b";
 
 /***/ }),
 
@@ -46182,6 +46240,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_style_index_0_id_0af8835a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_style_index_0_id_0af8835a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_style_index_0_id_0af8835a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&lang=css&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/views/Home.vue?vue&type=style&index=0&lang=css& ***!
@@ -46599,23 +46687,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarButton.vue?vue&type=template&id=0af8835a& */ "./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&");
+/* harmony import */ var _SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true& */ "./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true&");
 /* harmony import */ var _SidebarButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarButton.vue?vue&type=script&lang=js& */ "./resources/js/components/SidebarButton.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _SidebarButton_vue_vue_type_style_index_0_id_0af8835a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& */ "./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _SidebarButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__.render,
-  _SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  null,
+  "0af8835a",
   null
   
 )
@@ -46742,6 +46832,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_style_index_0_id_0af8835a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=style&index=0&id=0af8835a&scoped=true&lang=css&");
+
+
+/***/ }),
+
 /***/ "./resources/js/views/Home.vue?vue&type=style&index=0&lang=css&":
 /*!**********************************************************************!*\
   !*** ./resources/js/views/Home.vue?vue&type=style&index=0&lang=css& ***!
@@ -46789,19 +46892,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true& ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SidebarButton.vue?vue&type=template&id=0af8835a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarButton_vue_vue_type_template_id_0af8835a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true&");
 
 
 /***/ }),
@@ -46902,18 +47005,30 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "Sidebar" },
+    { staticClass: "sidebar" },
     [
       _c("SidebarButton", {
-        attrs: { text: "Prescriptions", color: "#fff0a5", page: "Prescription" }
+        attrs: { text: "Home", page: "/", imageSource: "DefaultIcon.png" }
       }),
       _vm._v(" "),
       _c("SidebarButton", {
-        attrs: { text: "Medical History", color: "#fff0a5", page: "About" }
+        attrs: { text: "About", page: "about", imageSource: "DefaultIcon.png" }
       }),
       _vm._v(" "),
       _c("SidebarButton", {
-        attrs: { text: "Doctors", color: "#fff0a5", page: "Doctor" }
+        attrs: {
+          text: "Prescriptions",
+          page: "prescription",
+          imageSource: "PrescriptionIcon.png"
+        }
+      }),
+      _vm._v(" "),
+      _c("SidebarButton", {
+        attrs: {
+          text: "Medical History",
+          page: "medical",
+          imageSource: "DefaultIcon.png"
+        }
       })
     ],
     1
@@ -46926,10 +47041,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SidebarButton.vue?vue&type=template&id=0af8835a&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -46945,15 +47060,22 @@ var render = function() {
   return _c(
     "button",
     {
-      staticClass: "button",
-      style: { background: _vm.color },
+      staticClass: "squareButton",
       on: {
         click: function($event) {
           return _vm.$router.push(_vm.page)
         }
       }
     },
-    [_vm._v(_vm._s(_vm.text))]
+    [
+      _c("img", {
+        staticClass: "pageImage",
+        attrs: { src: __webpack_require__("./resources/js/assets/sidebarLogos sync recursive ^\\.\\/.*$")("./" + _vm.imageSource) }
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("span", { staticClass: "buttonText" }, [_vm._v(_vm._s(_vm.text))])
+    ]
   )
 }
 var staticRenderFns = []
@@ -63580,6 +63702,40 @@ var index = {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (index);
 
 
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos sync recursive ^\\.\\/.*$":
+/*!*********************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/ sync ^\.\/.*$ ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./DefaultIcon.png": "./resources/js/assets/sidebarLogos/DefaultIcon.png",
+	"./DoctorIcon.png": "./resources/js/assets/sidebarLogos/DoctorIcon.png",
+	"./PrescriptionIcon.png": "./resources/js/assets/sidebarLogos/PrescriptionIcon.png"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/assets/sidebarLogos sync recursive ^\\.\\/.*$";
 
 /***/ })
 
