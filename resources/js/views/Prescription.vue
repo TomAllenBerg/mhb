@@ -1,10 +1,9 @@
 <template>
   <div class="prescription">
-    <Sidebar/>
-    <h1>This is the prescription page</h1>
+    <h1>This is the prescription page TEST</h1>
     <b-container class="bv-example-row">
       <b-row>
-        <b-col><LoginCard /></b-col>
+        <b-col><PrescriptionAddCard /></b-col>
       </b-row>
     </b-container>
   </div>
@@ -17,14 +16,13 @@
 </style>
 
 <script>
-import LoginCard from '../components/LoginCard.vue';
-import Sidebar from '../components/Sidebar.vue'
+// @ is an alias to /src
+import PrescriptionAddCard from '../components/PrescriptionAddCard.vue';
 
 export default {
   name: 'Prescription',
   components: {
-    LoginCard,
-    Sidebar
+    PrescriptionAddCard
   },
 };
 </script>
