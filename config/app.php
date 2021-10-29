@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'MyHealthBin'),//okay, so here's what this does: looks for the variable APP_NAME in your .env file, and returns it (and returns the second arg if it's not found). To access this, do config(app.name) or config(app.name, "default")
 
     /*
     |--------------------------------------------------------------------------

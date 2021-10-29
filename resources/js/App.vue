@@ -1,6 +1,7 @@
 <template>
   <div id="app">
       <div id="nav">
+          <link rel="icon" type="image/ico" href="/images/favicon.ico"/>
           <router-link to="/">Home</router-link> |
           <router-link to="/about">About</router-link> |
           <router-link to="/prescription">Prescriptions</router-link> |

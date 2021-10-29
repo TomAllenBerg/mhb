@@ -76,6 +76,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // @ is an alias to /src
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -46845,6 +46847,14 @@ var render = function() {
         "div",
         { attrs: { id: "nav" } },
         [
+          _c("link", {
+            attrs: {
+              rel: "icon",
+              type: "image/ico",
+              href: "/images/favicon.ico"
+            }
+          }),
+          _vm._v(" "),
           _c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")]),
           _vm._v(" |\n        "),
           _c("router-link", { attrs: { to: "/about" } }, [_vm._v("About")]),
@@ -46973,11 +46983,13 @@ var render = function() {
     "div",
     { staticClass: "home" },
     [
+      _c("Sidebar"),
+      _vm._v(" "),
       _c("img", {
-        attrs: { alt: "Vue logo", src: __webpack_require__(/*! ../assets/fav.png */ "./resources/js/assets/fav.png") }
+        attrs: { alt: "MyHealthBin Logo", src: __webpack_require__(/*! ../assets/fav.png */ "./resources/js/assets/fav.png") }
       }),
       _vm._v(" "),
-      _c("Sidebar")
+      _c("h1", [_vm._v("Welcome to MyHealthBin!")])
     ],
     1
   )

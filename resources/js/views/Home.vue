@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/fav.png">
     <Sidebar/>
+    <img alt="MyHealthBin Logo" src="../assets/fav.png">
+    <h1>Welcome to MyHealthBin!</h1>
+
   </div>
 </template>
 
