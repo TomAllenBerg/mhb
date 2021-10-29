@@ -42685,6 +42685,26 @@ module.exports = "/images/fav.png?c70133712346438bc35c6817516e40c0";
 
 /***/ }),
 
+/***/ "./resources/js/assets/sidebarLogos/3.png":
+/*!************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/3.png ***!
+  \************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/3.png?0575e12f226b4e1f6b9e71692f3fd250";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/4.png":
+/*!************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/4.png ***!
+  \************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/4.png?bda26ba34c2d733c35fa0108100def43";
+
+/***/ }),
+
 /***/ "./resources/js/assets/sidebarLogos/DefaultIcon.png":
 /*!**********************************************************!*\
   !*** ./resources/js/assets/sidebarLogos/DefaultIcon.png ***!
@@ -63712,6 +63732,8 @@ var index = {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./3.png": "./resources/js/assets/sidebarLogos/3.png",
+	"./4.png": "./resources/js/assets/sidebarLogos/4.png",
 	"./DefaultIcon.png": "./resources/js/assets/sidebarLogos/DefaultIcon.png",
 	"./DoctorIcon.png": "./resources/js/assets/sidebarLogos/DoctorIcon.png",
 	"./PrescriptionIcon.png": "./resources/js/assets/sidebarLogos/PrescriptionIcon.png"
