@@ -42544,7 +42544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sidebar[data-v-81fbb27e] {\r\n  height: 100%; \r\n  width: 130px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background: #fff950;\r\n  overflow-x: hidden;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sidebar[data-v-81fbb27e] {\r\n  height: 100%; \r\n  width: 130px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background: #fbe8a6;\r\n  overflow-x: hidden;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42682,6 +42682,26 @@ module.exports = function (cssWithMappingToString) {
 /***/ ((module) => {
 
 module.exports = "/images/fav.png?c70133712346438bc35c6817516e40c0";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/3.png":
+/*!************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/3.png ***!
+  \************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/3.png?0575e12f226b4e1f6b9e71692f3fd250";
+
+/***/ }),
+
+/***/ "./resources/js/assets/sidebarLogos/4.png":
+/*!************************************************!*\
+  !*** ./resources/js/assets/sidebarLogos/4.png ***!
+  \************************************************/
+/***/ ((module) => {
+
+module.exports = "/images/4.png?bda26ba34c2d733c35fa0108100def43";
 
 /***/ }),
 
@@ -63712,6 +63732,8 @@ var index = {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./3.png": "./resources/js/assets/sidebarLogos/3.png",
+	"./4.png": "./resources/js/assets/sidebarLogos/4.png",
 	"./DefaultIcon.png": "./resources/js/assets/sidebarLogos/DefaultIcon.png",
 	"./DoctorIcon.png": "./resources/js/assets/sidebarLogos/DoctorIcon.png",
 	"./PrescriptionIcon.png": "./resources/js/assets/sidebarLogos/PrescriptionIcon.png"

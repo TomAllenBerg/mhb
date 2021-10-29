@@ -1,5 +1,6 @@
 <template>
     <div class="medical">
+        <Sidebar/>
         <h1>Medical History</h1>
         <div class="your">
             <h3>Please Select Your Current Medical Conditions</h3>
@@ -27,7 +28,13 @@
 </template>
 
 <script>
+import Sidebar from '../components/Sidebar.vue'
+
     export default {
+        name: 'Medical History',
+        components: {
+            Sidebar,
+        },
         data() {
             return {
                 Items: [
@@ -58,7 +65,7 @@
 
                 ],
                 user: {
-                    fruitCollection: []
+                    Conditions: []
                 }
             };
         },

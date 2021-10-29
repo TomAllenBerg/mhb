@@ -26,7 +26,7 @@ export default {
   z-index: 1;
   top: 0;
   left: 0;
-  background: #fff950;
+  background: #fbe8a6;
   overflow-x: hidden;
 }
 </style>

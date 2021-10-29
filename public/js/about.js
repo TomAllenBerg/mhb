@@ -314,6 +314,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Sidebar.vue */ "./resources/js/components/Sidebar.vue");
 //
 //
 //
@@ -342,7 +343,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'Medical History',
+  components: {
+    Sidebar: _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       Items: [{
@@ -363,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "Glaucoma"
       }],
       user: {
-        fruitCollection: []
+        Conditions: []
       }
     };
   },
@@ -2162,104 +2169,111 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "medical" }, [
-    _c("h1", [_vm._v("Medical History")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "your" }, [
-      _c("h3", [_vm._v("Please Select Your Current Medical Conditions")]),
+  return _c(
+    "div",
+    { staticClass: "medical" },
+    [
+      _c("Sidebar"),
       _vm._v(" "),
-      _c("div", { staticClass: "ColorWrapper" }, [
-        _c("div", { staticClass: "Conditions" }, [
-          _c(
-            "form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.handleSubmit.apply(null, arguments)
+      _c("h1", [_vm._v("Medical History")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "your" }, [
+        _c("h3", [_vm._v("Please Select Your Current Medical Conditions")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "ColorWrapper" }, [
+          _c("div", { staticClass: "Conditions" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.handleSubmit.apply(null, arguments)
+                  }
                 }
-              }
-            },
-            [
-              _vm._l(_vm.Items, function(item) {
-                return _c(
-                  "div",
-                  { key: item.id, staticClass: "form-group form-check" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "form-check-label",
-                        attrs: { for: item.id }
-                      },
-                      [_vm._v(_vm._s(item.name))]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
+              },
+              [
+                _vm._l(_vm.Items, function(item) {
+                  return _c(
+                    "div",
+                    { key: item.id, staticClass: "form-group form-check" },
+                    [
+                      _c(
+                        "label",
                         {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.user.conditions,
-                          expression: "user.conditions"
-                        }
-                      ],
-                      attrs: { type: "checkbox", id: item.name },
-                      domProps: {
-                        value: item.name,
-                        checked: Array.isArray(_vm.user.conditions)
-                          ? _vm._i(_vm.user.conditions, item.name) > -1
-                          : _vm.user.conditions
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.user.conditions,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = item.name,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                _vm.$set(
-                                  _vm.user,
-                                  "conditions",
-                                  $$a.concat([$$v])
-                                )
+                          staticClass: "form-check-label",
+                          attrs: { for: item.id }
+                        },
+                        [_vm._v(_vm._s(item.name))]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.user.conditions,
+                            expression: "user.conditions"
+                          }
+                        ],
+                        attrs: { type: "checkbox", id: item.name },
+                        domProps: {
+                          value: item.name,
+                          checked: Array.isArray(_vm.user.conditions)
+                            ? _vm._i(_vm.user.conditions, item.name) > -1
+                            : _vm.user.conditions
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.user.conditions,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = item.name,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.user,
+                                    "conditions",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.user,
+                                    "conditions",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
                             } else {
-                              $$i > -1 &&
-                                _vm.$set(
-                                  _vm.user,
-                                  "conditions",
-                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                                )
+                              _vm.$set(_vm.user, "conditions", $$c)
                             }
-                          } else {
-                            _vm.$set(_vm.user, "conditions", $$c)
                           }
                         }
-                      }
-                    })
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(_vm.user.conditions) +
-                    "\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(0)
-            ],
-            2
-          )
+                      })
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(_vm.user.conditions) +
+                      "\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ],
+              2
+            )
+          ])
         ])
       ])
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
