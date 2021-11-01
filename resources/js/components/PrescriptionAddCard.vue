@@ -3,18 +3,18 @@
   <!-- <div class="center"> -->
    <div class="prescription-add-form">
     <div id="disabledWrapper">
-      <div class="loginColorWrapper">
-       <form id="loginForm" action="" method="post">
+       <form id="prescriptionAddForm" action="" method="post">
        <b-form-group has-error>
-         <h3>Login or <b>Sign-up</b></h3>
-         <label for="Username"><strong>Username</strong></label>
+       <ButtonBlock />
+         <h3>Add Prescription</h3>
+         <label for="Prescription Name"><strong>Prescription Name</strong></label>
          <Input />
          <div class="invalid-feedback">
          </div>
        </b-form-group>
 
           <b-form-group has-error>
-            <label for="Password"><strong>Password</strong></label>
+            <label for="Dosage"><strong>Dosage</strong></label>
             <Input />
               <div class="invalid-feedback">
               </div>
@@ -24,7 +24,7 @@
 
           </b-form-group>
 
-          <ButtonBlock />
+          
       </form>
       </div>
     </div>
@@ -52,45 +52,28 @@ h3 {
   font-size: 1.9rem;
 }
 
-.loginColorWrapper {
-  background: #d2fdff;
-  padding: 1.5em;
-}
-
-.login-form {
+.prescription-add-form {
 		width: 340px;
     margin: 3em auto;
 	}
 
-
-
-	/* Align MTU logo to center */
-	.login-form img {
-		display: block;
-		width: 70%;
-		height: auto;
-
-		margin-left: auto;
-		margin-right: auto;
-		background: #f7f7f7;
-		float: center;
-	}
-    .login-form form {
-        background-color: #b4dfe5;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 30px;
-    }
-    .login-form h2 {
-        margin: 0 0 15px;
-    }
-    .form-control, .btn {
-        min-height: 38px;
-        border-radius: 2px;
-    }
-    .btn {
-        font-size: 15px;
-        font-weight: bold;
-    }
+.prescription-add-form form {
+    background-color: #fbe8a6;
+    color: #303c6c;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.prescription-add-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+}
 
 .center {
   margin: 0;

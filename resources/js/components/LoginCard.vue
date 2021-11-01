@@ -6,7 +6,7 @@
       <div class="loginColorWrapper">
        <form id="loginForm" action="" method="post">
        <b-form-group has-error>
-         <h3>Login or <b>Sign-up</b></h3>
+         <h3>TEST or <b>Sign-up</b></h3>
          <label for="Username"><strong>Username</strong></label>
          <Input inputPlaceholder="Username"/>
          <div class="invalid-feedback">
