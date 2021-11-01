@@ -42520,7 +42520,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #white;\n  background-color: #303c6c;\n  min-height: 100vh;\n  margin: 0;\n}\n#nav {\n  padding: 30px;\n}\n#nav a {\n  font-weight: bold;\n  color: white;\n}\n#nav a.router-link-exact-active {\n  color: #42b983;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\r\n  font-family: Avenir, Helvetica, Arial, sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #white;\r\n  background-color: #303c6c;\r\n  min-height: 100vh;\r\n  margin: 0;\n}\n#nav {\r\n  padding: 30px;\n}\n#nav a {\r\n  font-weight: bold;\r\n  color: white;\n}\n#nav a.router-link-exact-active {\r\n  color: #42b983;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42544,7 +42544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sidebar[data-v-81fbb27e] {\n  height: 100%; \n  width: 130px;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  background: #fbe8a6;\n  overflow-x: hidden;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sidebar[data-v-81fbb27e] {\r\n  height: 100%; \r\n  width: 130px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background: #fbe8a6;\r\n  overflow-x: hidden;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42568,7 +42568,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.squareButton[data-v-0af8835a] {\n    display: block;\n    color: #111;\n    background: #ffffff00;\n    border: none;\n    width: 130px;\n    height: 130px;\n    cursor: pointer;\n    font-size: 17px;\n    position: relative;\n}\n.pageImage[data-v-0af8835a]{\n    max-width: 85px;\n    max-height: 85px;\n}\n.buttonText[data-v-0af8835a]{\n    position: absolute;\n    bottom: 2%;\n    width: 100%;\n    left: 0%\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.squareButton[data-v-0af8835a] {\r\n    display: block;\r\n    color: #111;\r\n    background: #ffffff00;\r\n    border: none;\r\n    width: 130px;\r\n    height: 130px;\r\n    cursor: pointer;\r\n    font-size: 17px;\r\n    position: relative;\n}\n.pageImage[data-v-0af8835a]{\r\n    max-width: 85px;\r\n    max-height: 85px;\n}\n.buttonText[data-v-0af8835a]{\r\n    position: absolute;\r\n    bottom: 2%;\r\n    width: 100%;\r\n    left: 0%\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42592,7 +42592,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.home {\n  color: white;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.home {\r\n  color: white;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
