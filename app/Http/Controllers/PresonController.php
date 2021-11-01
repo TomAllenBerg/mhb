@@ -14,7 +14,8 @@ class PresonController extends Controller
      */
     public function index()
     {
-        //
+        $person = Person::all();
+        return view('Person.index',compact('person',$person));
     }
 
     /**
@@ -24,7 +25,7 @@ class PresonController extends Controller
      */
     public function create()
     {
-        //
+        return view('Person.create');
     }
 
     /**
@@ -75,7 +76,7 @@ class PresonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Person = Person::find($id);
+        $person = Person::find($id);
         $person->update($request->all());
 
         $newPerson->first_name = $request->input("first_name");
