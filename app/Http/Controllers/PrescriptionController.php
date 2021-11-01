@@ -81,7 +81,6 @@ class PrescriptionController extends Controller
     public function update(Request $request, Prescription $prescription)
     {
         $prescript = Prescription::find($prescription);
-
         $prescript->update($request->all());
 
         return response()->json('successfully updated');
@@ -96,7 +95,6 @@ class PrescriptionController extends Controller
     public function destroy(Prescription $prescription)
     {
         $prescript = Prescription::find($prescription);
-
         $prescript->delete();
 
         return response()->json('successfully deleted');

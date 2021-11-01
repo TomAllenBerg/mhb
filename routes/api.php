@@ -32,7 +32,6 @@ Route::post('/prescription/update/{id}', 'PrescriptionController@update');
 Route::delete('/prescription/delete/{id}', 'PrescriptionController@delete');
 Route::get('/prescriptions', 'PrescriptionController@index');
 
-
 // Routes created for the Medical History controller to use functions
 Route::post('/medical_histroy/create', 'Medical_histroyController@store');
 Route::get('/medical_histroy/edit/{id}', 'Medical_histroyController@edit');

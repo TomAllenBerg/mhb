@@ -20,8 +20,10 @@ class CreatePrescriptionsTable extends Migration
             $table->string('name');
             $table->integer('strength');
             $table->integer('quantity');
+            $table->string('side_effects');
             $table->timestamps();
         });
+
     }
 
     /**

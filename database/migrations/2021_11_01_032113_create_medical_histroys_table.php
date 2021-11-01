@@ -16,9 +16,14 @@ class CreateMedicalHistroysTable extends Migration
         Schema::create('medical_histroys', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('condition');
+            $table->string('DOB');
+            $table->string('bloodtype');
+            $table->string('allergies');
+            $table->string('conditions');
+            $table->string('surgeries'); 
             $table->timestamps();
         });
+
     }
 
     /**

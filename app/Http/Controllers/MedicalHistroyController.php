@@ -80,7 +80,6 @@ class MedicalHistroyController extends Controller
     public function update(Request $request, Medical_histroy $medical_histroy)
     {
         $medHistory = Medical_histroy::find($medical_histroy);
-
         $medHistory->update($request->all());
 
         return response()->json('successfully updated');
@@ -95,7 +94,6 @@ class MedicalHistroyController extends Controller
     public function destroy(Medical_histroy $medical_histroy)
     {
         $medHistory = Medical_histroy::find($medical_histroy);
-
         $medHistory->delete();
 
         return response()->json('successfully deleted');

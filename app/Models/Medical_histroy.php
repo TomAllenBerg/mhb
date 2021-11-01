@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Medical_histroy extends Model
 {
     use HasFactory;
-
     protected $table = "medical_historys";
     public $timestamps = true;
 
     protected $fillable = [ 
         'name',
-        'condition'
+        'DOB',
+        'bloodtype',
+        'allergies',
+        'conditions',
+        'surgeries'
     ];
 }
