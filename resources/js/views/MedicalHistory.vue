@@ -2,78 +2,29 @@
     <div class="medical">
         <Sidebar/>
         <h1>Medical History</h1>
-        <div class="your">
-            <h3>Please Select Your Current Medical Conditions</h3>
-            <div class="ColorWrapper">
-                <div class="Conditions">
-                    <form @submit.prevent="handleSubmit">
-                        <div class="form-group form-check" v-for="item in Items" v-bind:key="item.id">
-                            <label class="form-check-label" :for="item.id">{{item.name}}</label>
-                            <input type="checkbox" v-model="user.conditions" :id="item.name" :value="item.name">
-                        </div>
-                        <!-- print result -->
-                        <div class="form-group">
-                            {{user.conditions}}
-                        </div>
-
-                        <div class="form-group">
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="container">
+            <div class="conditions">
+                <ConditionsAddCard />
             </div>
+            <div class = "surgery">
+                <b-col><HistoryAddCard/></b-col>
+            </div>    
         </div>
     </div>
-
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue'
+import Sidebar from '../components/Sidebar.vue';
+import HistoryAddCard from '../components/HistoryAddCard.vue';
+import ConditionsAddCard from '../components/ConditionsAddCard.vue';
 
     export default {
-        name: 'Medical History',
+        name: 'MedicalHistory',
         components: {
             Sidebar,
+            HistoryAddCard,
+            ConditionsAddCard,
         },
-        data() {
-            return {
-                Items: [
-                    {
-                        name: 'Acne'
-                    },
-                    {
-                        name: 'Arthritis'
-                    },
-                    {
-                        name: 'Asthma'
-                    },
-                    {
-                        name: 'Carpal Tunnel Syndrome'
-                    },
-                    {
-                        name: "Crohn's Disease"
-                    },
-                    {
-                        name: "Diabetes"
-                    },
-                    {
-                        name: "Eczema"
-                    },
-                    {
-                        name: "Glaucoma"
-                    }
-
-                ],
-                user: {
-                    Conditions: []
-                }
-            };
-        },
-        methods: {
-            handleSubmit() {
-                alert(JSON.stringify(this.user));
-            }
-        }
     };
 </script>
 
@@ -91,22 +42,16 @@ import Sidebar from '../components/Sidebar.vue'
         font-size: 68px;
         font-weight: bold;
     }
-    .ColorWrapper {
-      margin-top: 25px;
-        background: #d2fdff;
-        padding: 1.5em;
-        width: 350px;
-        margin-left: 450px !important;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: stretch;
     }
-    .Conditions {
-        max-height: 300px;
-        overflow: auto;
-        width: 295px;
-        background-color: #b4dfe5;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 30px;
+    .conditions{
+        order: 1;
     }
-    .your h3 {
-        color: #ffffff;
+    .surgery{
+        order: 2;
     }
 </style>
