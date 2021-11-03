@@ -3,30 +3,11 @@
   <!-- <div class="center"> -->
    <div class="prescription-add-form">
     <div id="disabledWrapper">
-       <form id="prescriptionAddForm" action="" method="post">
-       <b-form-group has-error>
-       
-         <label for="Prescription Name"><strong>Prescription Name</strong></label>
-         <Input />
-         <div class="invalid-feedback">
-         </div>
-       </b-form-group>
-
-          <b-form-group has-error>
-            <label for="Dosage"><strong>Dosage</strong></label>
-            <Input />
-              <div class="invalid-feedback">
-              </div>
-          </b-form-group>
-
-          <b-form-group has-error>
-
-          </b-form-group>
-
-          <ButtonBlock  buttonBlockText="Add Prescription"  />
-          
-      </form>
+    <div class="loginColorWrapper">
+      This is the prescription info
+        
       </div>
+    </div>
     </div>
    </div>
   <!-- </div> -->
@@ -34,22 +15,21 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import ButtonBlock from '../components/ButtonBlock.vue';
-import Input from '../components/Input.vue';
 
 export default {
-  name: "PrescriptionAddCard",
-  components: {
-    ButtonBlock,
-    Input
-  },
+  name: "PrescriptionAddCard"
 };
 </script>
 
 <style lang="scss" scoped>
 h3 {
   font-size: 1.9rem;
+}
+
+.loginColorWrapper {
+  background: #b4dfe5;
+  color: #000000;
+  padding: 1.5em;
 }
 
 .prescription-add-form {

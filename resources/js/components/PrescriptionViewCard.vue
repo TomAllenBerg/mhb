@@ -3,30 +3,14 @@
   <!-- <div class="center"> -->
    <div class="prescription-add-form">
     <div id="disabledWrapper">
-       <form id="prescriptionAddForm" action="" method="post">
-       <b-form-group has-error>
-       
-         <label for="Prescription Name"><strong>Prescription Name</strong></label>
-         <Input />
-         <div class="invalid-feedback">
-         </div>
-       </b-form-group>
-
-          <b-form-group has-error>
-            <label for="Dosage"><strong>Dosage</strong></label>
-            <Input />
-              <div class="invalid-feedback">
-              </div>
-          </b-form-group>
-
-          <b-form-group has-error>
-
-          </b-form-group>
-
-          <ButtonBlock  buttonBlockText="Add Prescription"  />
-          
-      </form>
+    <div class="loginColorWrapper">
+      <h3>Current Prescriptions</h3>
+      <b-container class="bv-example-row">
+        <b-row>
+        <PrescriptionInfo />
+        </b-row>
       </div>
+    </div>
     </div>
    </div>
   <!-- </div> -->
@@ -35,14 +19,12 @@
 
 <script>
 // @ is an alias to /src
-import ButtonBlock from '../components/ButtonBlock.vue';
-import Input from '../components/Input.vue';
+import PrescriptionInfo from '../components/PrescriptionInfo.vue';
 
 export default {
   name: "PrescriptionAddCard",
   components: {
-    ButtonBlock,
-    Input
+    PrescriptionInfo
   },
 };
 </script>
@@ -50,6 +32,12 @@ export default {
 <style lang="scss" scoped>
 h3 {
   font-size: 1.9rem;
+}
+
+.loginColorWrapper {
+  background: #d2fdff;
+  color: #303c6c;
+  padding: 1.5em;
 }
 
 .prescription-add-form {
