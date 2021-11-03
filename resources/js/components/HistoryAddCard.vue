@@ -15,6 +15,8 @@
           <b-form-group has-error>
             <label for="Date"><strong>Date</strong></label>
             <Input />
+            <br><br>
+             <ButtonBlock  buttonBlockText="Add Surgery" />
               <div class="invalid-feedback">
               </div>
           </b-form-group>
