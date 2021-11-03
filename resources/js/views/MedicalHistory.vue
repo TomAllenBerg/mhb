@@ -9,6 +9,9 @@
             <div class = "surgery">
                 <b-col><HistoryAddCard/></b-col>
             </div>    
+            <div class = 'button'>
+                 <ButtonBlock  buttonBlockText="View My Medical History" />
+            </div>
         </div>
     </div>
 </template>
@@ -17,6 +20,8 @@
 import Sidebar from '../components/Sidebar.vue';
 import HistoryAddCard from '../components/HistoryAddCard.vue';
 import ConditionsAddCard from '../components/ConditionsAddCard.vue';
+import ButtonBlock from '../components/ButtonBlock.vue';
+
 
     export default {
         name: 'MedicalHistory',
@@ -24,6 +29,7 @@ import ConditionsAddCard from '../components/ConditionsAddCard.vue';
             Sidebar,
             HistoryAddCard,
             ConditionsAddCard,
+            ButtonBlock,
         },
     };
 </script>
@@ -47,11 +53,21 @@ import ConditionsAddCard from '../components/ConditionsAddCard.vue';
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: stretch;
+        gap: 60px;
     }
     .conditions{
+        margin: auto;
+        width: 50%;
         order: 1;
+
+    }
+    .ConditionsAddCard{
+    outline: 10px solid #ffff;
     }
     .surgery{
         order: 2;
+    }
+    .button{
+        order: 3;
     }
 </style>

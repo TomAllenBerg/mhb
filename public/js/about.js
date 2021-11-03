@@ -26422,6 +26422,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // @ is an alias to /src
 
 
@@ -26862,6 +26864,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Sidebar.vue */ "./resources/js/components/Sidebar.vue");
 /* harmony import */ var _components_HistoryAddCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/HistoryAddCard.vue */ "./resources/js/components/HistoryAddCard.vue");
 /* harmony import */ var _components_ConditionsAddCard_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ConditionsAddCard.vue */ "./resources/js/components/ConditionsAddCard.vue");
+/* harmony import */ var _components_ButtonBlock_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ButtonBlock.vue */ "./resources/js/components/ButtonBlock.vue");
 //
 //
 //
@@ -26877,6 +26880,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -26885,7 +26892,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Sidebar: _components_Sidebar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     HistoryAddCard: _components_HistoryAddCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ConditionsAddCard: _components_ConditionsAddCard_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    ConditionsAddCard: _components_ConditionsAddCard_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ButtonBlock: _components_ButtonBlock_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 
@@ -27203,7 +27211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".medical[data-v-335cf622] {\n  margin-bottom: 1px;\n  margin-right: 1px;\n  margin-right: 1px;\n  background: #303c6c;\n  padding: 10px;\n}\n.medical h1[data-v-335cf622] {\n  color: #ffffff;\n  font-family: Helvetica, \"Open Sans\", Arial, sans-serif;\n  font-size: 68px;\n  font-weight: bold;\n}\n.container[data-v-335cf622] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n  align-content: stretch;\n}\n.conditions[data-v-335cf622] {\n  order: 1;\n}\n.surgery[data-v-335cf622] {\n  order: 2;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".medical[data-v-335cf622] {\n  margin-bottom: 1px;\n  margin-right: 1px;\n  margin-right: 1px;\n  background: #303c6c;\n  padding: 10px;\n}\n.medical h1[data-v-335cf622] {\n  color: #ffffff;\n  font-family: Helvetica, \"Open Sans\", Arial, sans-serif;\n  font-size: 68px;\n  font-weight: bold;\n}\n.container[data-v-335cf622] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n  align-content: stretch;\n  gap: 60px;\n}\n.conditions[data-v-335cf622] {\n  margin: auto;\n  width: 50%;\n  order: 1;\n}\n.ConditionsAddCard[data-v-335cf622] {\n  outline: 10px solid #ffff;\n}\n.surgery[data-v-335cf622] {\n  order: 2;\n}\n.button[data-v-335cf622] {\n  order: 3;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29123,6 +29131,13 @@ var render = function() {
                 _vm._v(" "),
                 _c("Input"),
                 _vm._v(" "),
+                _c("br"),
+                _c("br"),
+                _vm._v(" "),
+                _c("ButtonBlock", {
+                  attrs: { buttonBlockText: "Add Surgery" }
+                }),
+                _vm._v(" "),
                 _c("div", { staticClass: "invalid-feedback" })
               ],
               1
@@ -29663,6 +29678,17 @@ var render = function() {
           "div",
           { staticClass: "surgery" },
           [_c("b-col", [_c("HistoryAddCard")], 1)],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "button" },
+          [
+            _c("ButtonBlock", {
+              attrs: { buttonBlockText: "View My Medical History" }
+            })
+          ],
           1
         )
       ])
