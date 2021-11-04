@@ -1,6 +1,4 @@
 <template>
-<div>
-  <!-- <div class="center"> -->
    <div class="prescription-add-form">
     <div id="disabledWrapper">
        <form id="prescriptionAddForm" action="" method="post">
@@ -29,8 +27,6 @@
       </div>
     </div>
    </div>
-  <!-- </div> -->
-</div>
 </template>
 
 <script>
@@ -54,7 +50,7 @@ h3 {
 
 .prescription-add-form {
 		width: 340px;
-    margin: 3em auto;
+    margin: auto;
 	}
 
 .prescription-add-form form {
@@ -62,6 +58,7 @@ h3 {
     color: #303c6c;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 30px;
+    
 }
 .prescription-add-form h2 {
     margin: 0 0 15px;

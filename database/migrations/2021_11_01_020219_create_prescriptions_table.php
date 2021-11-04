@@ -17,10 +17,10 @@ class CreatePrescriptionsTable extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->string('p_name');
-            $table->string('name');
-            $table->integer('strength');
-            $table->integer('quantity');
-            $table->string('side_effects');
+            //$table->string('name');
+            //$table->integer('strength');
+            $table->integer('dosage');
+            //$table->string('side_effects');
             $table->timestamps();
         });
 
