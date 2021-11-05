@@ -14,8 +14,8 @@
               <form id="loginForm" action="" method="post">
               <b-form-group has-error>
                 <h3>Log in</h3>
-                <label for="Username"><strong>Username</strong></label>
-                <Input v-model="body" inputPlaceholder="Username"/>
+                <label for="Email"><strong>Email</strong></label>
+                <Input v-model="body" inputPlaceholder="Email"/>
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
