@@ -25,7 +25,7 @@
 
           </b-form-group>
 
-          
+
       </form>
       </div>
     </div>
@@ -99,7 +99,7 @@ label {
    position: relative;
    cursor: not-allowed;
     background: #d2fdff;
-        
+
 }
 
 .invalid-feedback {

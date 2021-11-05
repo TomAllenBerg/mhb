@@ -13,25 +13,31 @@
              <div class="loginColorWrapper">
               <form id="loginForm" action="" method="post">
               <b-form-group has-error>
-                <h3>Log in</h3>
-                <label for="Username"><strong>Username</strong></label>
-                <Input v-model="body" inputPlaceholder="Username"/>
+                <h3>Create account</h3>
+                <label for="Email"><strong>Email</strong></label>
+                <Input v-model="body" inputPlaceholder="Email"/>
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Password"><strong>Password</strong></label>
-                   <Input v-model="title" type="password" inputPlaceholder="Password"/>
-                   <!-- <input v-model="title" placeholder="Title" required />
-                   <input v-model="body" placeholder="Title" required /> -->
+                   <Input v-model="title" inputPlaceholder="Password"/>
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
 
-                 <ButtonBlock @click.native="greet" buttonBlockText="Log in" />
+                 <b-form-group has-error>
+                   <label for="Confirm Password"><strong>Confirm Password</strong></label>
+                   <Input v-model="title" inputPlaceholder="Confirm Password"/>
+                     <div class="invalid-feedback">
+                     </div>
+                 </b-form-group>
 
-                 <p class="routerLink">Need an account? <router-link to="/register">Sign up</router-link></p>
+
+                 <ButtonBlock @click.native="greet" buttonBlockText="Sign up" />
+
+                 <p class="routerLink">Have an account? <router-link to="/login">Login</router-link></p>
              </form>
              </div>
            </div>
