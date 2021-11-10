@@ -11,19 +11,24 @@
          <div class="invalid-feedback">
          </div>
        </b-form-group>
-
-          <b-form-group has-error>
+            <b-form-group has-error>
+              <label for="Surgeon"><strong>Surgeon Name</strong></label>
+               <Input />
+            </b-form-group>
+            <b-form-group has-error>
             <label for="Date"><strong>Date</strong></label>
             <Input />
-            <br><br>
-             <ButtonBlock  buttonBlockText="Add Surgery" />
               <div class="invalid-feedback">
               </div>
           </b-form-group>
-
-          <b-form-group has-error>
-
-          </b-form-group>
+            <b-form-group has-error>
+              <label for="Description"><strong>Description/Comments</strong></label>
+               <Input />
+            </b-form-group>
+          
+            <br><br>
+             <ButtonBlock  buttonBlockText="Add Surgery" />
+       
 
 
       </form>

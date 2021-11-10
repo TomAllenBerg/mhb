@@ -13,7 +13,7 @@ class CreateMedicalHistroysTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_histroys', function (Blueprint $table) {
+        Schema::create('medical_historys', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('DOB');
