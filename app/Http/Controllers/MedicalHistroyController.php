@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Medical_histroy;
+use App\Models\Medical_history;
 use Illuminate\Http\Request;
 
-class MedicalHistroyController extends Controller
+class MedicalHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MedicalHistroyController extends Controller
      */
     public function index()
     {
-        $medHistory = Medical_histroy::all();
+        $medHistory = Medical_history::all();
         return response()->json($medHistory);
     }
 
@@ -36,7 +36,7 @@ class MedicalHistroyController extends Controller
      */
     public function store(Request $request)
     {
-        $medHistory = new Medical_histroy([
+        $medHistory = new Medical_history([
             'name' => $request->get('name'),
             'condition' => $request->get('condition')
             
@@ -50,10 +50,10 @@ class MedicalHistroyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Medical_histroy  $medical_histroy
+     * @param  \App\Models\Medical_history  $medical_history
      * @return \Illuminate\Http\Response
      */
-    public function show(Medical_histroy $medical_histroy)
+    public function show(Medical_history $medical_history)
     {
         //
     }
@@ -61,12 +61,12 @@ class MedicalHistroyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Medical_histroy  $medical_histroy
+     * @param  \App\Models\Medical_history  $medical_history
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medical_histroy $medical_histroy)
+    public function edit(Medical_history $medical_history)
     {
-        $medHistory = Medical_histroy::find($medical_histroy);
+        $medHistory = Medical_history::find($medical_history);
         return response()->json($medHistory);
     }
 
@@ -74,12 +74,12 @@ class MedicalHistroyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Medical_histroy  $medical_histroy
+     * @param  \App\Models\Medical_history  $medical_history
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medical_histroy $medical_histroy)
+    public function update(Request $request, Medical_history $medical_history)
     {
-        $medHistory = Medical_histroy::find($medical_histroy);
+        $medHistory = Medical_history::find($medical_history);
         $medHistory->update($request->all());
 
         return response()->json('successfully updated');
@@ -88,12 +88,12 @@ class MedicalHistroyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Medical_histroy  $medical_histroy
+     * @param  \App\Models\Medical_history  $medical_history
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medical_histroy $medical_histroy)
+    public function destroy(Medical_history $medical_history)
     {
-        $medHistory = Medical_histroy::find($medical_histroy);
+        $medHistory = Medical_history::find($medical_history);
         $medHistory->delete();
 
         return response()->json('successfully deleted');
