@@ -79,7 +79,7 @@ export default {
       // }
       const postData = { title: this.title, body: this.body };
       axios
-        .post("https://jsonplaceholder.typicode.com/posts", postData)
+        .get("/myhealthbin/api/prescriptions", userid)
         .then(res => {
           console.log(res.body);
         });

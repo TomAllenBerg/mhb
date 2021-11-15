@@ -28,8 +28,8 @@ class CreatePrescriptionsTable extends Migration
             $table->string('side_effects')->nullable($value = true);
             $table->timestamps();
 
-            $table->primary(['id', 'user_id', 'doctor_id']);
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->primary(['id', 'user_id', 'doctor_id']);
+            // $table->foreign('user_id')->references('id')->on('users');
             //$table->foreign('doctor_id')->references('id')->on('doctors');
         });
 
