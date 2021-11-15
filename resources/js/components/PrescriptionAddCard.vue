@@ -1,32 +1,79 @@
 <template>
    <div class="prescription-add-form">
-    <div id="disabledWrapper">
+
        <form id="prescriptionAddForm" action="" method="post">
-       <b-form-group has-error>
-       
-         <label for="Prescription Name"><strong>Prescription Name</strong></label>
-         <Input />
-         <div class="invalid-feedback">
-         </div>
-       </b-form-group>
+        <b-container class="fields">
 
+          <b-row>
+          <b-col>
           <b-form-group has-error>
-            <label for="Dosage"><strong>Dosage</strong></label>
+            <label for="Prescription Name"><strong>Prescription Name</strong></label>
             <Input />
-              <div class="invalid-feedback">
-              </div>
+            <div class="invalid-feedback"></div>
           </b-form-group>
+          </b-col>
+          </b-row>
 
+          <b-row>
+          <b-col>
           <b-form-group has-error>
-
+            <label for="Dosage"><strong>Amount</strong></label>
+            <Input />
+            <div class="invalid-feedback"></div>
           </b-form-group>
+          </b-col>
+          <b-col>
+          <b-row>
+          <select class="form-select" aria-label="multiple select example">
+            <option selected>kg</option>
+            <option value="1">g</option>
+            <option value="2">mg</option>
+            <option value="3">mcg</option>
+            <option value="4">L</option>
+            <option value="5">mL</option>
+            <option value="6">cc</option>
+            <option value="7">tablets</option>
+            <option value="8">drops</option>
+          </select>
+          </b-row>
+          <b-row>
+          <select class="form-select" aria-label="multiple select example">
+            <option selected>Oral</option>
+            <option value="1">Subcutaneous Injection</option>
+            <option value="2">Intramuscular Injection</option>
+            <option value="3">Intravenous Injection</option>
+            <option value="4">Inhalation</option>
+            <option value="5">Ocular</option>
+            <option value="6">Topical</option>
+          </select>
+          </b-row>
+          </b-col>
+          </b-row>
+
+          <b-row>
+          <b-col>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Instructions</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          </b-col>
+          </b-row>
+
+          <b-row>
+          <b-col>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Side Effects</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          </b-col>
+          </b-row>
 
           <ButtonBlock  buttonBlockText="Add Prescription"  />
-          
+
+        </b-container>
       </form>
       </div>
     </div>
-   </div>
 </template>
 
 <script>
@@ -57,7 +104,7 @@ h3 {
     background-color: #fbe8a6;
     color: #303c6c;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+    padding: 10px;
     
 }
 .prescription-add-form h2 {
@@ -84,17 +131,6 @@ h3 {
 label {
   margin-bottom: 0.1em;
   float: left;
-}
-
-.disabled {
-  pointer-events: none;
-  background-color: #bbb;
-  opacity: 0.5;
-    margin-bottom: -200px;
-}
-.disabledWrapper {
-   position: relative;
-   cursor: not-allowed;
 }
 
 .invalid-feedback {
