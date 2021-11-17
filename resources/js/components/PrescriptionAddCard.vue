@@ -3,7 +3,8 @@
 
        <form id="prescriptionAddForm" action="" method="post">
         <b-container class="fields">
-
+        <b-row>
+        <b-col>
           <b-row>
           <b-col>
           <b-form-group has-error>
@@ -67,8 +68,30 @@
           </div>
           </b-col>
           </b-row>
+        
+          
+        </b-col>
 
+        <b-col>
+          <b-row>
+          <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
+          <select class="form-select" aria-label="multiple select example">
+            <option value="1">Doctor 1</option>
+            <option value="2">Doctor 2</option>
+            <option value="3">Doctor 3</option>
+          </select>
+          </b-row>
+
+          <b-row>
+
+          </b-row>
+        </b-col>
+
+        </b-row>
+        
+        <b-row>
           <ButtonBlock  buttonBlockText="Add Prescription"  />
+        </b-row>
 
         </b-container>
       </form>
@@ -96,8 +119,8 @@ h3 {
 }
 
 .prescription-add-form {
-		width: 340px;
-    margin: auto;
+		width: 640px;
+    margin: 10px;
 	}
 
 .prescription-add-form form {
@@ -119,14 +142,7 @@ h3 {
     font-weight: bold;
 }
 
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+
 
 label {
   margin-bottom: 0.1em;
