@@ -4,27 +4,27 @@
       <b-container class="fields">
         <b-row>
           <b-col>
-          Refill Date:
+            Refill Date:
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-          Pharmacy Phone#:
+            Pharmacy Phone#:
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-          Pharmacy Address:
+            Pharmacy Address:
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-          Refills Remaining:
+            Refills Remaining:
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-          Doctor:
+            Doctor:
           </b-col>
         </b-row>
       </b-container>     
@@ -47,7 +47,7 @@ export default {
 .refillInfo {
   background-color: #fbe8a6;
   color: #000000;
-  margin: auto;
+  margin: 10px;
   width: 90%;
   padding: 1.5em;
 }
