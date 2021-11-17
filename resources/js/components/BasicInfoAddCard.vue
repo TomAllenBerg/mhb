@@ -23,11 +23,15 @@
           </b-form-group>
             <b-form-group has-error>
                <div>
-                <label class="typo__label">Select Your Allergies</label>
+                <!-- <label class="typo__label">Select Your Allergies</label> -->
                  <multiselect v-model="value" :options="options" :multiple="true" group-values="allergy" group-label="type" :group-select="true" placeholder="Type to search for your allergies" track-by="name" label="name"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
                   <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} options selected</span></template>
-               <pre class="language-json"><code>{{ value  }}</code></pre>
+               <!-- <pre class="language-json"><code>{{ value  }}</code></pre> -->
               </div>
+              <br>
+               <div class="conditions">
+                <ConditionsAddCard/>
+            </div>
             </b-form-group>
             <br><br>
              <ButtonBlock  buttonBlockText="Submit Info" />

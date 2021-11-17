@@ -3,9 +3,6 @@
         <Sidebar/>
         <h1>Medical History</h1>
         <div class="container">
-            <div class="conditions">
-                <ConditionsAddCard />
-            </div>
               <div class = 'basicInfo'>
                  <BasicInfoAddCard/>
             </div>
