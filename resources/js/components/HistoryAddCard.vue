@@ -28,9 +28,6 @@
           
             <br><br>
              <ButtonBlock  buttonBlockText="Add Surgery" />
-       
-
-
       </form>
       </div>
     </div>
