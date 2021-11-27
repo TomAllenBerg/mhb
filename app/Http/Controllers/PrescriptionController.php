@@ -36,17 +36,18 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        //$prescript = Prescription::create($request->all());
         // header("HTTP/1.0 600 Test string");
-       // exit();
-       $prescription = new Prescription([
+        // exit();
+        $prescription = new Prescription;
         //'user_id' => $request->get('user_id'),
-        'name' => $request->get('name'),
-        'dosage_amt' => $request->get('dosage_amt'),
-        'dosage_unit' => $request->get('dosage_unit'),
-        'routes' => $request->get('routes'),
-        'instructions' => $request->get('instructions'),
-        'side_effects' => $request->get('side_effects')
-        ]);
+        $prescription->name = $request->get('name');
+        $prescription->dosage_amt = $request->get('dosage_amt');
+        $prescription->dosage_unit = $request->get('dosage_unit');
+        $prescription->route = $request->get('route');
+        $prescription->instructions = $request->get('instructions');
+        $prescription->side_effects = $request->get('side_effects');
+        
     
         $prescription->save();
     

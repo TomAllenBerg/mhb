@@ -15,7 +15,7 @@ class CreatePrescriptionsTable extends Migration
     {
         // Create schema for prescriptions
         Schema::create('prescriptions', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
            //$table->bigInteger('user_id');
            //$table->bigInteger('doctor_id');
            $table->string('name')->nullable($value = false);

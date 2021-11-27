@@ -26,7 +26,8 @@
           <b-col>
           <b-row>
           <select class="form-select" v-model="prescription.dosage_unit" aria-label="multiple select example">
-            <option selected>kg</option>
+            <option selected>select</option>
+            <option value="0">kg</option>
             <option value="1">g</option>
             <option value="2">mg</option>
             <option value="3">mcg</option>
@@ -39,7 +40,8 @@
           </b-row>
           <b-row>
           <select class="form-select" v-model="prescription.route" aria-label="multiple select example">
-            <option selected>Oral</option>
+            <option selected>select</option>
+            <option value="0">Oral</option>
             <option value="1">Subcutaneous Injection</option>
             <option value="2">Intramuscular Injection</option>
             <option value="3">Intravenous Injection</option>
@@ -55,7 +57,7 @@
           <b-col>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Instructions</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" v-model="prescription.instructions" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           </b-col>
           </b-row>
@@ -64,7 +66,7 @@
           <b-col>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Side Effects</label>
-            <textarea class="form-control" v-model="prescription.instructions" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" v-model="prescription.side_effects" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           </b-col>
           </b-row>
@@ -118,9 +120,9 @@ export default {
        name:" ",
        dosage_amt:" ",
        dosage_unit:" ",
-       side_effects:" ",
        route:" ",
-       instructions:" "
+       instructions:" ",
+       side_effects:" "
      }   
    }
  },
@@ -128,11 +130,12 @@ export default {
  methods: {
    // Method to take data and make an api request to store that data
    addPost(){
-     console.log(this.prescription);
-     let uri = 'http://127.0.0.1:8000/api/prescription/create';
+     let uri = '/api/prescription/store';
      this.axios.post(uri, this.prescription).then((response) => {
        this.$router.push({name: 'prescription'});
-     });
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
    }
  }
 
