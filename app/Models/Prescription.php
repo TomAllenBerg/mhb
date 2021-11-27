@@ -12,9 +12,12 @@ class Prescription extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'p_name', 
         'name',
-        'strength',
-        'quantity'
+        'dosage_amt',
+        'dosage_unit',
+        'routes',
+        'instructions',
+        'side_effects'
     ];
+ 
 }

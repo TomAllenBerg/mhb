@@ -28,11 +28,14 @@ window.Vue = require('vue').default;
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import BootstrapVue from 'bootstrap-vue';
+ import Vue from 'vue';
+ import App from './App.vue';
+ import router from './router';
+ import store from './store';
+ import BootstrapVue from 'bootstrap-vue';
+ import VueAxios from 'vue-axios';
+ import axios from 'axios';
+ Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false
 

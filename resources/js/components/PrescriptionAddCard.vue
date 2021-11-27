@@ -1,7 +1,7 @@
 <template>
    <div class="prescription-add-form">
 
-       <form id="prescriptionAddForm" action="" method="post">
+       <form id="prescriptionAddForm" action="" method="addPost">
         <b-container class="fields">
         <b-row>
         <b-col>
@@ -9,7 +9,7 @@
           <b-col>
           <b-form-group has-error>
             <label for="Prescription Name"><strong>Prescription Name</strong></label>
-            <Input />
+            <input type="text" class="form-control" v-model="prescription.name">
             <div class="invalid-feedback"></div>
           </b-form-group>
           </b-col>
@@ -19,13 +19,13 @@
           <b-col>
           <b-form-group has-error>
             <label for="Dosage"><strong>Amount</strong></label>
-            <Input />
+            <input type="text" class="form-control" v-model="prescription.dosage_amt">
             <div class="invalid-feedback"></div>
           </b-form-group>
           </b-col>
           <b-col>
           <b-row>
-          <select class="form-select" aria-label="multiple select example">
+          <select class="form-select" v-model="prescription.dosage_unit" aria-label="multiple select example">
             <option selected>kg</option>
             <option value="1">g</option>
             <option value="2">mg</option>
@@ -38,7 +38,7 @@
           </select>
           </b-row>
           <b-row>
-          <select class="form-select" aria-label="multiple select example">
+          <select class="form-select" v-model="prescription.route" aria-label="multiple select example">
             <option selected>Oral</option>
             <option value="1">Subcutaneous Injection</option>
             <option value="2">Intramuscular Injection</option>
@@ -64,7 +64,7 @@
           <b-col>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Side Effects</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" v-model="prescription.instructions" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           </b-col>
           </b-row>
@@ -90,19 +90,20 @@
         </b-row>
         
         <b-row>
-          <ButtonBlock  buttonBlockText="Add Prescription"  />
+          <ButtonBlock @click.native="addPost" buttonBlockText="Add Prescription"/>
         </b-row>
 
         </b-container>
       </form>
       </div>
-    </div>
+
 </template>
 
 <script>
 // @ is an alias to /src
 import ButtonBlock from '../components/ButtonBlock.vue';
 import Input from '../components/Input.vue';
+import axios from 'axios' 
 
 export default {
   name: "PrescriptionAddCard",
@@ -110,6 +111,31 @@ export default {
     ButtonBlock,
     Input
   },
+
+  data() {
+   return {
+     prescription:{
+       name:" ",
+       dosage_amt:" ",
+       dosage_unit:" ",
+       side_effects:" ",
+       route:" ",
+       instructions:" "
+     }   
+   }
+ },
+ 
+ methods: {
+   // Method to take data and make an api request to store that data
+   addPost(){
+     console.log(this.prescription);
+     let uri = 'http://127.0.0.1:8000/api/prescription/create';
+     this.axios.post(uri, this.prescription).then((response) => {
+       this.$router.push({name: 'prescription'});
+     });
+   }
+ }
+
 };
 </script>
 

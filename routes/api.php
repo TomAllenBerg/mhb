@@ -20,10 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-
-Route::middleware('api')->group(function () {
-    Route::resource('person', PersonController::class);
-});
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+ }); 
 
 // Routes created for the prescription controller to use functions
 Route::post('/prescription/create', 'PrescriptionController@store');
