@@ -4,6 +4,7 @@
     <SidebarButton text = "About" page = "about" imageSource = "AboutIcon.png"/>
     <SidebarButton text = "Prescriptions" page = "prescription" imageSource = "PrescriptionIcon.png"/>
     <SidebarButton text = "Medical History" page = "medical" imageSource = "HistoryIcon.png"/>
+    <SidebarButton text = "Doctors" page = "doctor" imageSource = "DoctorIcon.png"/>
   </div>
 </template>
 
