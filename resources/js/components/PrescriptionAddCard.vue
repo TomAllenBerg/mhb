@@ -8,94 +8,111 @@
         <b-container class="fields">
         <b-row>
         <b-col>
-          <b-row>
-          <b-col>
+
+
+          <!-- <b-row>
+          <b-col> -->
           <b-form-group has-error>
             <label for="Prescription Name"><strong>Prescription Name</strong></label>
             <input type="text" class="form-control" v-model="prescription.name">
             <div class="invalid-feedback"></div>
           </b-form-group>
+          <!-- </b-col>
+          </b-row>
+
+          <b-row>
+          <b-col> -->
+          <div class="flexBox">
+            <b-form-group has-error>
+              <label for="Dosage"><strong>Amount</strong></label>
+              <input type="text" class="form-control" v-model="prescription.dosage_amt">
+              <div class="invalid-feedback"></div>
+            </b-form-group>
+            <b-form-group has-error>
+              <label for="unit"><strong>Unit</strong></label><br>
+              <select class="form-select" v-model="prescription.dosage_unit" aria-label="multiple select example">
+                <option selected>select</option>
+                <option value="1">kg</option>
+                <option value="2">g</option>
+                <option value="3">mg</option>
+                <option value="4">mcg</option>
+                <option value="5">L</option>
+                <option value="6">mL</option>
+                <option value="7">cc</option>
+                <option value="8">tablets</option>
+                <option value="9">drops</option>
+              </select>
+            </b-form-group>
+          </div>
+
+          <div class="flexBox">
+            <b-form-group has-error>
+              <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
+              <select class="form-select" aria-label="multiple select example">
+                <option selected>select</option>
+                <option value="1">Doctor 1</option>
+                <option value="2">Doctor 2</option>
+                <option value="3">Doctor 3</option>
+              </select>
+            </b-form-group>
+
+            <b-form-group has-error>
+              <label for="route"><strong>Route</strong></label><br>
+              <select class="form-select" v-model="prescription.route" aria-label="multiple select example">
+                <option selected>select</option>
+                <option value="1">Oral</option>
+                <option value="2">Subcutaneous Injection</option>
+                <option value="3">Intramuscular Injection</option>
+                <option value="4">Intravenous Injection</option>
+                <option value="5">Inhalation</option>
+                <option value="6">Ocular</option>
+                <option value="7">Topical</option>
+              </select>
+            </b-form-group>
+          </div>
+
+          <!-- </b-col>
+          <b-col> -->
+
+          <!-- </b-row>
           </b-col>
           </b-row>
 
           <b-row>
-          <b-col>
+          <b-col> -->
           <b-form-group has-error>
-            <label for="Dosage"><strong>Amount</strong></label>
-            <input type="text" class="form-control" v-model="prescription.dosage_amt">
-            <div class="invalid-feedback"></div>
-          </b-form-group>
-          </b-col>
-          <b-col>
-          <b-row>
-          <select class="form-select" v-model="prescription.dosage_unit" aria-label="multiple select example">
-            <option selected>select</option>
-            <option value="0">kg</option>
-            <option value="1">g</option>
-            <option value="2">mg</option>
-            <option value="3">mcg</option>
-            <option value="4">L</option>
-            <option value="5">mL</option>
-            <option value="6">cc</option>
-            <option value="7">tablets</option>
-            <option value="8">drops</option>
-          </select>
-          </b-row>
-          <b-row>
-          <select class="form-select" v-model="prescription.route" aria-label="multiple select example">
-            <option selected>select</option>
-            <option value="0">Oral</option>
-            <option value="1">Subcutaneous Injection</option>
-            <option value="2">Intramuscular Injection</option>
-            <option value="3">Intravenous Injection</option>
-            <option value="4">Inhalation</option>
-            <option value="5">Ocular</option>
-            <option value="6">Topical</option>
-          </select>
-          </b-row>
-          </b-col>
-          </b-row>
-
-          <b-row>
-          <b-col>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Instructions</label>
+            <label for="exampleFormControlTextarea1"><strong>Instructions</strong></label>
             <textarea class="form-control" v-model="prescription.instructions" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          </b-col>
-          </b-row>
+           </b-form-group>
+          <!-- </b-col>
+          </b-row> -->
 
-          <b-row>
-          <b-col>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Side Effects</label>
+          <!-- <b-row>
+          <b-col> -->
+          <b-form-group has-error>
+            <label for="exampleFormControlTextarea1"><strong>Side Effects</strong></label>
             <textarea class="form-control" v-model="prescription.side_effects" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          </b-col>
-          </b-row>
+          </b-form-group>
+          <!-- </b-col>
+          </b-row> -->
 
 
-        </b-col>
+        <!-- </b-col>
 
-        <b-col>
-          <b-row>
-          <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
-          <select class="form-select" aria-label="multiple select example">
-            <option value="1">Doctor 1</option>
-            <option value="2">Doctor 2</option>
-            <option value="3">Doctor 3</option>
-          </select>
-          </b-row>
+        <b-col> -->
+          <!-- <b-row> -->
 
-          <b-row>
+          <!-- </b-row> -->
 
-          </b-row>
+          <!-- <b-row>
+
+          </b-row> -->
         </b-col>
 
         </b-row>
 
         <b-row>
-          <b-button class="mr-2" @click="$bvModal.hide('modal-1')">Close</b-button>
+          <b-button class="mr-2 leftMargin" @click="$bvModal.hide('modal-1')">Cancel</b-button>
           <ButtonBlock @click.native="addPost" buttonBlockText="Add Prescription"/>
         </b-row>
 
@@ -159,6 +176,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.leftMargin {
+  margin-left: 15px;
+}
 h3 {
   font-size: 1.9rem;
 }
@@ -208,7 +234,7 @@ h3 {
 
 label {
   margin-bottom: 0.1em;
-  float: left;
+  // float: left;
 }
 
 .invalid-feedback {

@@ -2,7 +2,7 @@
     <div class="colorWrapper">
       <div class="flex">
         <h3>Current Prescriptions</h3>
-        <b-button v-b-modal.modal-1><i class="fas fa-plus"></i> Add prescription</b-button>
+        <b-button size="sm" v-b-modal.modal-1><i class="fas fa-plus"></i> Add prescription</b-button>
       </div>
 
       <b-container class="bv-example-row">
@@ -36,10 +36,13 @@ export default {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding-bottom: 1em;
+  align-items:center;
 }
 
 h3 {
   font-size: 1.9rem;
+  margin-bottom: 0;
 }
 
 .row {
