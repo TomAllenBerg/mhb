@@ -1,6 +1,10 @@
 <template>
     <div class="colorWrapper">
-      <h3>Current Prescriptions</h3>
+      <div class="flex">
+        <h3>Current Prescriptions</h3>
+        <b-button v-b-modal.modal-1><i class="fas fa-plus"></i> Add prescription</b-button>
+      </div>
+
       <b-container class="bv-example-row">
         <b-row>
           <b-col><PrescriptionInfo /></b-col>
@@ -23,11 +27,16 @@ export default {
   name: "PrescriptionViewCard",
   components: {
     PrescriptionInfo
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
 
 h3 {
   font-size: 1.9rem;

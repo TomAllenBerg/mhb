@@ -1,4 +1,7 @@
 <template>
+
+<b-modal id="modal-1" title="Add new prescription" modal-class="modal-background-color" @hide="resetInfoModal">
+
    <div class="prescription-add-form">
 
        <form id="prescriptionAddForm" action="" method="addPost">
@@ -70,8 +73,8 @@
           </div>
           </b-col>
           </b-row>
-        
-          
+
+
         </b-col>
 
         <b-col>
@@ -90,22 +93,23 @@
         </b-col>
 
         </b-row>
-        
+
         <b-row>
+          <b-button class="mr-2" @click="$bvModal.hide('modal-1')">Close</b-button>
           <ButtonBlock @click.native="addPost" buttonBlockText="Add Prescription"/>
         </b-row>
 
         </b-container>
       </form>
       </div>
-
+</b-modal>
 </template>
 
 <script>
 // @ is an alias to /src
 import ButtonBlock from '../components/ButtonBlock.vue';
 import Input from '../components/Input.vue';
-import axios from 'axios' 
+import axios from 'axios'
 
 export default {
   name: "PrescriptionAddCard",
@@ -123,20 +127,30 @@ export default {
        route:" ",
        instructions:" ",
        side_effects:" "
-     }   
+     }
    }
  },
- 
+
  methods: {
    // Method to take data and make an api request to store that data
    addPost(){
      let uri = '/api/prescription/store';
      this.axios.post(uri, this.prescription).then((response) => {
-       this.$router.push({name: 'prescription'});
+       // this.$router.push({name: 'Prescription'});
+       // this.modalShow = false
+       this.$bvModal.hide('modal-1')
      }).catch(function(error) {
         console.log(error.response.data);
       });
-   }
+   },
+   resetInfoModal() {
+        this.prescription.side_effects = '';
+        this.prescription.route = '';
+        this.prescription.instructions = '';
+        this.prescription.dosage_unit = '';
+        this.prescription.dosage_amt = '';
+        this.prescription.name = '';
+  },
  }
 
 };
@@ -147,8 +161,25 @@ h3 {
   font-size: 1.9rem;
 }
 
+::v-deep .modal-content {
+  background-color: #303c6c !important;
+}
+
+::v-deep .modal-title {
+  color: white;
+}
+
+::v-deep .modal-footer {
+  display: none;
+}
+
+::v-deep .close {
+  opacity: 1;
+  color: #fff;
+}
+
 .prescription-add-form {
-		width: 640px;
+		width: auto;
     margin: 10px;
 	}
 
@@ -157,19 +188,19 @@ h3 {
     color: #303c6c;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 10px;
-    
+
 }
 .prescription-add-form h2 {
     margin: 0 0 15px;
 }
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-}
+// .form-control, .btn {
+//     min-height: 38px;
+//     border-radius: 2px;
+// }
+// .btn {
+//     font-size: 15px;
+//     font-weight: bold;
+// }
 
 
 

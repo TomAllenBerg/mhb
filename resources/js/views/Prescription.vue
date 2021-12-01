@@ -7,12 +7,16 @@
           <b-row><PrescriptionViewCard /></b-row>
         </b-col>
         <b-col>
-          <b-row><PrescriptionAddCard /></b-row>
+          
+
+
+            <b-row><PrescriptionAddCard /></b-row>
+
           <b-row><RefillCard /></b-row>
         </b-col>
       </b-row>
-        
-      
+
+
     </b-container>
   </div>
 </template>
