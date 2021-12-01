@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 .row {
    text-align: left;

@@ -44,9 +44,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .about {
   color: white !important;
+  padding: 20px;
+  margin-left: 130px;/*account for sidebar*/
 }
 
 .authors {

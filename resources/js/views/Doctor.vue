@@ -15,3 +15,11 @@ export default {
   }
 }
 </script>
+
+<style land="scss" scoped>
+  .doctor {
+
+    padding: 20px;
+    margin-left: 130px;/*account for sidebar*/
+  }
+</style>

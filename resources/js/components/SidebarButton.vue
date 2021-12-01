@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .squareButton {
     display: block;
     color: #111;
@@ -39,6 +39,7 @@ export default {
     position: absolute;
     bottom: 2%;
     width: 100%;
-    left: 0%
+    left: 0%;
+    color: #7F4E39;
 }
 </style>
