@@ -139,6 +139,8 @@ export default {
        // this.$router.push({name: 'Prescription'});
        // this.modalShow = false
        this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+       // this.dismissCountDown = this.dismissSecs
      }).catch(function(error) {
         console.log(error.response.data);
       });

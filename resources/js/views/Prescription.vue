@@ -3,15 +3,28 @@
     <Sidebar/>
     <h1>This is the prescription page</h1>
     <b-container class="bv-example-row">
+      <b-alert
+    :show="dismissCountDown"
+    dismissible
+    variant="success"
+    @dismissed="dismissCountDown=0"
+    @dismiss-count-down="countDownChanged"
+  >
+    Success! Prescription added. Alert will close in {{ dismissCountDown }} seconds...
+  </b-alert>
+  <!-- <b-button @click="showAlert" variant="info" class="m-1">
+    Show alert with count-down timer
+  </b-button> -->
       <b-row>
+
         <b-col class = "l-col">
           <b-row><PrescriptionViewCard /></b-row>
         </b-col>
         <b-col>
-          
 
 
-            <b-row><PrescriptionAddCard /></b-row>
+
+            <b-row><PrescriptionAddCard @success-alert="showAlert"/></b-row>
 
           <b-row><RefillCard /></b-row>
         </b-col>
@@ -48,5 +61,19 @@ export default {
     RefillCard,
     Sidebar
   },
+  data() {
+      return {
+        dismissSecs: 5,
+        dismissCountDown: 0
+      }
+    },
+  methods: {
+      countDownChanged(dismissCountDown) {
+        this.dismissCountDown = dismissCountDown
+      },
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs
+      }
+    }
 };
 </script>
