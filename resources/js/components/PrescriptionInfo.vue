@@ -18,7 +18,7 @@
           </b-row>
       </b-container>
 
-        
+
     </div>
 </template>
 
@@ -38,6 +38,15 @@ export default {
   color: #000000;
   text-align: left;
   padding: 1.5em;
+  border: 1px solid #ced4da;
+  border-radius: 0.25em;
+}
+.infoLine:hover {
+  background-color: #a6ccd1;
+  border: 1px solid #ced4da;
+  border-color: #80bdff;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 
 </style>
