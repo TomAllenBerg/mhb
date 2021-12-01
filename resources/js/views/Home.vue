@@ -17,28 +17,28 @@
         <button class="gridItemButton" @click="$router.push('about')">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/AboutIcon.png" id="smallIcon">
-          <h1 id="sectionHeading">About</h1>
+          <h1 id="sectionHeading"> About</h1>
           <p>Learn more about our mission and who we are.</p>
         </div>
         </button>
         <button class="gridItemButton" @click="$router.push('prescription')">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/PrescriptionIcon.png" id="smallIcon">
-          <h1 id="sectionHeading">Prescriptions</h1>
+          <h1 id="sectionHeading"> Prescriptions</h1>
           <p>View & add prescriptions.</p>
         </div>
         </button>
         <button class="gridItemButton" @click="$router.push('medical')">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/HistoryIcon.png" id="smallIcon">
-          <h1 id="sectionHeading">Medical History</h1>
+          <h1 id="sectionHeading"> Medical History</h1>
           <p>View & add to your medical history.</p>
         </div>
         </button>
         <button class="gridItemButton" @click="$router.push('doctor')">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/DoctorIcon.png" id="smallIcon">
-          <h1 id="sectionHeading">Doctors</h1>
+          <h1 id="sectionHeading"> Doctors</h1>
           <p>View your doctors.</p>
         </div>
         </button>
@@ -101,6 +101,10 @@ export default {
     background: #d2fdff;
     color: #303c6c;
     margin: 5px;
+    padding: 10px;
+  }
+  .gridItem p{
+    margin:1px;
   }
   .gridItemButton {
     background: #b4dfe5;

@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 
 .prescription {
   color: white;

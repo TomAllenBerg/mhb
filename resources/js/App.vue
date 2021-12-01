@@ -1,14 +1,5 @@
 <template>
   <div id="app">
-      <div id="nav">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link> |
-          <router-link to="/prescription">Prescriptions</router-link> |
-          <router-link to="/medical">Medical History</router-link> |
-          <router-link to="/doctor">Doctors</router-link> |
-          <router-link to="/login">Login</router-link> |
-          <router-link to="/register">Register</router-link>
-      </div>
     <router-view/>
   </div>
 </template>
@@ -24,18 +15,7 @@
   background-color: #303c6c;
   min-height: 100vh;
   margin: 0;
+  padding-top: 20px;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: white;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
