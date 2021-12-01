@@ -49,9 +49,9 @@ import Multiselect from 'vue-multiselect';
     .medical {
         margin-bottom: 1px;
         margin-right: 1px;
-        margin-right: 1px;
         background: #303c6c;
-        padding: 10px;
+        padding: 20px;
+        margin-left: 130px;/*account for sidebar*/
     }
     .medical h1 {
         color: #ffffff;

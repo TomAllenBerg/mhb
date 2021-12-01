@@ -1,12 +1,13 @@
 <template>
   <div class="home">
+    
     <Sidebar/>
     <div class="container">
       <div class="topGrid">
-        <div class="topGridItem" style="justify-self: start;">
+        <div class="topGridItem">
           <img alt="MyHealthBin Logo" src="../assets/fav.png" style="width: 50%; height: auto; justify-self: end;">
         </div>
-        <div class="topGridItem" style="justify-self:end;">
+        <div class="topGridItem">
           <h1 style="font-size:45px;">Welcome to MyHealthBin!</h1>
           <p><router-link to="/login" id="LoginRegisterLink">Login</router-link> | 
           <router-link to="/register" id="LoginRegisterLink">Register</router-link></p>
@@ -61,7 +62,8 @@ export default {
 <style land="scss" scoped>
   .home {
     /*color: white;*/
-    padding-left: 130px;
+    padding: 20px;
+    margin-left: 130px;/*account for sidebar*/
   }
   #sectionHeading {
     display: inline;
@@ -81,7 +83,6 @@ export default {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    padding: 20px;
     min-width: 650px;
     max-width: 900px
   }
