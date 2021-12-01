@@ -26,8 +26,9 @@ class CreatePrescriptionsTable extends Migration
            $table->enum('route', ['oral', 'subcutaneous injection', 'intramuscular injection', 'intravenous injection', 'inhalation', 'ocular', 'topical'])->nullable($value = false);
            $table->string('instructions')->nullable($value = true);
            $table->string('side_effects')->nullable($value = true);
+           $table->string('doctor')->nullable($value = true);
            $table->timestamps();
- 
+
            //$table->primary(['user_id', 'doctor_id']);
            // $table->foreign('user_id')->references('id')->on('users');
            // $table->foreign('doctor_id')->references('id')->on('doctors');

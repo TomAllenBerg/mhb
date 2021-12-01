@@ -48,7 +48,7 @@
           <div class="flexBox">
             <b-form-group has-error>
               <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
-              <select class="form-select" aria-label="multiple select example">
+              <select class="form-select" aria-label="multiple select example" v-model="prescription.doctor">
                 <option selected>select</option>
                 <option value="1">Doctor 1</option>
                 <option value="2">Doctor 2</option>

@@ -47,10 +47,11 @@ class PrescriptionController extends Controller
         $prescription->route = $request->get('route');
         $prescription->instructions = $request->get('instructions');
         $prescription->side_effects = $request->get('side_effects');
-        
-    
+        $prescription->doctor = $request->get('doctor');
+
+
         $prescription->save();
-    
+
         return response()->json('successfully added');
     }
 
