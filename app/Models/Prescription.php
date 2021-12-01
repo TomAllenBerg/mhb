@@ -15,7 +15,7 @@ class Prescription extends Model
         'name',
         'dosage_amt',
         'dosage_unit',
-        'routes',
+        'route',
         'instructions',
         'side_effects'
     ];
