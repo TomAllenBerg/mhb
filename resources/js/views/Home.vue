@@ -8,9 +8,9 @@
           <img alt="MyHealthBin Logo" src="../assets/fav.png" style="width: 50%; height: auto; justify-self: end;">
         </div>
         <div class="topGridItem">
-          <h1 style="font-size:45px;">Welcome to MyHealthBin!</h1>
-          <p><router-link to="/login" id="LoginRegisterLink">Login</router-link> | 
-          <router-link to="/register" id="LoginRegisterLink">Register</router-link></p>
+          <h1 style="font-size:45px;font-weight:bold;">Welcome to MyHealthBin!</h1>
+          <p><u><router-link to="/login" id="LoginRegisterLink">Login</router-link></u> | 
+          <u><router-link to="/register" id="LoginRegisterLink">Register</router-link></u></p>
         </div>
       </div>
       <div class="grid">
@@ -67,9 +67,11 @@ export default {
   }
   #sectionHeading {
     display: inline;
+    font-weight: bold;
   }
   #smallIcon {
-    height: 25px;
+    transform:translateY(-30%);
+    height: 30px;
     width: auto;
   }
   .topGrid {
@@ -96,6 +98,7 @@ export default {
   }
   .topGridItem{
     align-self: center;
+    color: white;
   }
   .gridItem{
     background: #d2fdff;
@@ -104,13 +107,13 @@ export default {
     padding: 10px;
   }
   .gridItem p{
-    margin:1px;
+    margin: 1px;
+    font-style: italic;
   }
   .gridItemButton {
     background: #b4dfe5;
     border: none;
     cursor: pointer;
-    /*min-width: 300px;*/
   }
   #LoginRegisterLink {
     color: #FFFFFF
