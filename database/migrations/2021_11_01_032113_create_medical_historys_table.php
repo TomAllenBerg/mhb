@@ -20,7 +20,11 @@ class CreateMedicalHistorysTable extends Migration
             $table->string('bloodtype');
             $table->string('allergies');
             $table->string('conditions');
-            $table->string('surgeries'); 
+            $table->string('surgery_name'); 
+            $table->string('surgeon_name'); 
+            $table->string('surgery_name'); 
+            $table->string('surgery_date'); 
+            $table->string('surgery_description'); 
             $table->timestamps();
         });
 
