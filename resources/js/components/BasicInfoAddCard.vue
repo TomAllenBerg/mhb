@@ -7,17 +7,17 @@
        <b-form-group has-error>
          <h3>Personal Information</h3>
          <label for="Full Name"><strong>Full Name</strong></label>
-         <Input/>
+         <input type="text" class="form-control darkBlueInput" v-model="medical.fullName">
          <div class="invalid-feedback">
          </div>
        </b-form-group>
             <b-form-group has-error>
               <label for="Date of Birth"><strong>Date of Birth</strong></label>
-               <Input />
+                <input type="text" class="form-control darkBlueInput" v-model="medical.DOB">
             </b-form-group>
             <b-form-group has-error>
             <label for="Blood Type"><strong>Blood Type</strong></label>
-            <Input/>
+             <input type="text" class="form-control darkBlueInput" v-model="medical.bloodType">
               <div class="invalid-feedback">
               </div>
           </b-form-group>
@@ -34,7 +34,7 @@
             </div>
             </b-form-group>
             <br><br>
-             <ButtonBlock  buttonBlockText="Submit Info" />
+           <ButtonBlock @click.native="addPost" buttonBlockText="Submit"/>
       </form>
       </div>
     </div>
@@ -48,11 +48,25 @@ import ButtonBlock from '../components/ButtonBlock.vue';
 import Input from '../components/Input.vue';
 import ConditionsAddCard from '../components/ConditionsAddCard.vue';
 import Multiselect from 'vue-multiselect';
+import axios from 'axios'
 Vue.component('multiselect', Multiselect);
 export default {
+  name: "BasicInfoAddCard",
+  components: {
+    ButtonBlock,
+    Input,
+    ConditionsAddCard,
+    Multiselect,
+  },
         data(){
-            return{
-                value: null,
+            return {
+              medical:{
+              full_name:" ",
+              dob:" ",
+              blood_type:" ",
+              allergies:" ",
+              conditions: " ",
+              },
                 options: [
                   {
                     type: 'Animal Allergies',
@@ -131,19 +145,45 @@ export default {
                     ]
                   },
                   ],
-            }
+            } 
         },
-  name: "BasicInfoAddCard",
-  components: {
-    ButtonBlock,
-    Input,
-    ConditionsAddCard,
-    Multiselect,
-  },
-};
+
+ methods: {
+   // Method to take data and make an api request to store that data
+   addPost(){
+     let uri = '/api/prescription/store';
+     this.axios.post(uri, this.medical).then((response) => {
+       // this.$router.push({name: 'Prescription'});
+       // this.modalShow = false
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+       // this.dismissCountDown = this.dismissSecs
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   }
+ }
+ };
+
+
+            
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss" scoped>
+.darkBlueInput {
+  border-color: #303c6c;
+  border-width: medium;
+  background: #b4dfe5;
+}
+
+.darkBlueInput:hover {
+  background: #b4dfe5;
+}
+
+.darkBlueInput:focus {
+  border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
+}
 h3 {
   font-size: 1.9rem;
 }

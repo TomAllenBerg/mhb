@@ -7,27 +7,27 @@
        <b-form-group has-error>
          <h3>Add Past Surgeries</h3>
          <label for="Surgery Name"><strong>Surgery Name</strong></label>
-         <Input />
+         <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryName">
          <div class="invalid-feedback">
          </div>
        </b-form-group>
             <b-form-group has-error>
               <label for="Surgeon"><strong>Surgeon Name</strong></label>
-               <Input />
+               <input type="text" class="form-control darkBlueInput" v-model="medical.surgeon">
             </b-form-group>
             <b-form-group has-error>
             <label for="Date"><strong>Date</strong></label>
-            <Input />
+            <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryDate">
               <div class="invalid-feedback">
               </div>
           </b-form-group>
             <b-form-group has-error>
               <label for="Description"><strong>Description/Comments</strong></label>
-               <Input />
+               <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryDesc">
             </b-form-group>
 
             <br><br>
-             <ButtonBlock  buttonBlockText="Add Surgery" />
+             <ButtonBlock @click.native="addPost" buttonBlockText="Add Surgery"/>
       </form>
       </div>
     </div>
@@ -39,6 +39,7 @@
 // @ is an alias to /src
 import ButtonBlock from '../components/ButtonBlock.vue';
 import Input from '../components/Input.vue';
+import axios from 'axios'
 
 export default {
   name: "HistoryAddCard",
@@ -46,6 +47,34 @@ export default {
     ButtonBlock,
     Input
   },
+
+  data() {
+   return {
+     medical:{
+       surgery_name:" ",
+       surgeon_name:" ",
+       sugery_date:" ",
+       surgery_description:" "
+     }
+   }
+ },
+
+ methods: {
+   // Method to take data and make an api request to store that data
+   addPost(){
+     let uri = '/api/prescription/store';
+     this.axios.post(uri, this.prescription).then((response) => {
+       // this.$router.push({name: 'Prescription'});
+       // this.modalShow = false
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+       // this.dismissCountDown = this.dismissSecs
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   },
+ }
+
 };
 </script>
 
