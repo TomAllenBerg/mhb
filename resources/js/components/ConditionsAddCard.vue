@@ -58,7 +58,6 @@ export default {
                         { Id: 'condition38', Condition: 'Transient Ischemic Attack (TIA)' },
                         { Id: 'condition39', Condition: 'Ulcerative Colitis' },
                     ]
-                   
                   },
                   {
                     type: 'Cancer',
@@ -140,7 +139,7 @@ export default {
                         { Id: 'cancer75', Condition: 'Primary Peritoneal Cancer' },
                         { Id: 'cancer76', Condition: 'Prostate Cancer' },
                         { Id: 'cancer77', Condition: 'Rectal Cancer' },
-                          { Id: 'cancer78', Condition: 'Renal Cell (Kidney) Cancer' },
+                        { Id: 'cancer78', Condition: 'Renal Cell (Kidney) Cancer' },
                         { Id: 'cancer79', Condition: 'Retinoblastoma' },
                         { Id: 'cancer80', Condition: 'Salivary Gland Cancer' },
                         { Id: 'cancer81', Condition: 'Ewing Sarcoma (Bone Cancer)' },
@@ -153,27 +152,66 @@ export default {
                         { Id: 'cancer88', Condition: 'Soft Tissue Sarcoma' },
                         { Id: 'cancer89', Condition: 'Thyroid Cancer' },
                         { Id: 'cancer90', Condition: 'Tracheobronchial Tumors' },
-                         { Id: 'cancer91', Condition: 'Urethral Cancer' },
+                        { Id: 'cancer91', Condition: 'Urethral Cancer' },
                         { Id: 'cancer92', Condition: 'Uterine Cancer, Endometrial' },
                         { Id: 'cancer93', Condition: 'Uterine Sarcoma' },
                         { Id: 'cancer94', Condition: 'Vaginal Cancer' },
                         { Id: 'cancer95', Condition: 'Vascular Tumors (Soft Tissue Sarcoma)' },
                         { Id: 'cancer96', Condition: 'Vulvar Cancer' },
-
-
-
                     ]
                   },
-                  
-                ],
+                  {
+                    type: 'Heart Conditions',
+                    condition: [
+                       { Id: 'heart1', Condition: 'Coronary heart disease' } , 
+                       { Id: 'heart2', Condition: 'Angina' } , 
+                       { Id: 'heart3', Condition: 'Unstable angina' } , 
+                       { Id: 'heart4', Condition: 'Heart failure' } , 
+                       { Id: 'heart5', Condition: 'Arrhythmia (abnormal heart rhythms)' } , 
+                       { Id: 'heart6', Condition: 'Valve disease ' } , 
+                       { Id: 'heart7', Condition: 'High blood pressure' } , 
+                       { Id: 'heart8', Condition: 'Congenital heart conditions' } ,
+                       { Id: 'heart9', Condition: 'Pericardial disease' } , 
+                       { Id: 'heart10', Condition: 'Peripheral vascular disease' } , 
+                       { Id: 'heart11', Condition: 'Rheumatic heart disease' } , 
+                       { Id: 'heart12', Condition: 'Stroke' } , 
+                       { Id: 'heart13', Condition: 'Vascular disease (blood vessel disease)' } , 
+                       { Id: 'heart14', Condition: 'Deep Vein Thrombosis and Pulmonary Embolism' } , 
+                       { Id: 'heart15', Condition: 'Aortic stenosis' } , 
+                       { Id: 'heart16', Condition: 'Mitral valve insufficiency' } ,
+                       
+                    ]
+                  },
+                  {
+                    type: 'Congenital disorders',
+                    condition: [
+                       { Id: 'con1', Condition: 'cleft lip and cleft palate' } , 
+                       { Id: 'con2', Condition: 'congenital heart disease ' } , 
+                       { Id: 'con3', Condition: 'cerebral palsy' } , 
+                       { Id: 'con4', Condition: 'Fragile X syndrome' } , 
+                       { Id: 'con5', Condition: 'Down syndrome' } , 
+                       { Id: 'con6', Condition: 'spina bifida' } , 
+                       { Id: 'con7', Condition: 'cystic fibrosis' } , 
+                       { Id: 'con8', Condition: 'Cleft lip alone' } ,
+                       { Id: 'con9', Condition: 'Cleft palate alone' } , 
+                       { Id: 'con10', Condition: 'Talipes equinovarus' } , 
+                       { Id: 'con11', Condition: 'Reduction defects of upper and lower limbs (longitudinal, transverse, and intercalary)' } , 
+                       { Id: 'con12', Condition: 'Exomphalos (omphalocele)' } , 
+                       { Id: 'con13', Condition: 'Gastroschisis' } , 
+                       { Id: 'con14', Condition: 'Hypospadias' } , 
+                       { Id: 'con15', Condition: 'Microtia/Anotia' } , 
+                       { Id: 'con16', Condition: 'Anencephaly' } ,
+                       { Id: 'con17', Condition: 'Craniorachischisis' } , 
+                       { Id: 'con18', Condition: 'Iniencephaly' } , 
+                       { Id: 'con19', Condition: 'Encephalocele' } , 
+                    ],
+                  },
+                ]
             }
         }
-}
+}   
+              
 </script>
-
 <style lang="scss" scoped>
     //@import url(https://cdn.syncfusion.com/ej2/material.css);
 </style>
-   
-
-

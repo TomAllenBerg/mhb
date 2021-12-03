@@ -57,15 +57,77 @@ export default {
                   {
                     type: 'Animal Allergies',
                     allergy: [
-                       {id: 'allergy1', name: 'Dog Allergy'},
-                      {id: 'allergy2', name: 'Cat Allergy'},
+                      {id: 'animal1', name: 'Dog'},
+                      {id: 'animal2', name: 'Cat'},
+                      {id: 'animal3', name: 'Rabbit'},
+                      {id: 'animal4', name: 'Small Rodent'},
+                  ]
+                  },
+                  {
+                    type: 'Insect Allergies',
+                    allergy: [
+                      {id: 'insect1', name: 'Bee'},
+                      {id: 'insect2', name: 'Wasp'},
+                      {id: 'insect3', name: 'Hornet'},
+                      {id: 'insect4', name: 'Yellow-Jacket'},
+                      {id: 'insect5', name: 'Mosquitos'},
+                      {id: 'insect6', name: 'Bed Bugs'},
+                      {id: 'insect7', name: 'Fleas'},
+                      {id: 'insect8', name: 'Cockroaches'},
+                    ]
+                  },
+                   {
+                    type: 'Other Allergies',
+                    allergy: [
+                      {id: 'other1', name: 'Dust'},
+                      {id: 'other2', name: 'Mold'},
+                      {id: 'other3', name: 'Pollen'},
+                      {id: 'other4', name: 'Latex'},
                   ]
                   },
                   {
                     type: 'Food Allergies',
                     allergy: [
-                      {id: 'allergy3', name: 'Fish Allergy'},
-                      {id: 'allergy4', name: 'Red Meat Allergy'},
+                      {id: 'food1', name: 'Fish'},
+                      {id: 'food2', name: 'Red Meat'},
+                      {id: 'food3', name: 'Milk'},
+                      {id: 'food4', name: 'Egg'},
+                      {id: 'food5', name: 'Peanut'},
+                      {id: 'food6', name: 'Tree nut'},
+                      {id: 'food7', name: 'Soy'},
+                      {id: 'food8', name: 'Wheat'},
+                      {id: 'food9', name: 'Shell Fish'},
+                      {id: 'food10', name: 'Banana'},
+                      {id: 'food11', name: 'Linseed'},
+                      {id: 'food12', name: 'Sesame seed'},
+                      {id: 'food13', name: 'Avocado'},
+                      {id: 'food14', name: 'Kiwi fruit'},
+                      {id: 'food15', name: 'Garlic'},
+                    ]
+                  },
+                  {
+                    type: 'Drug Allergies',
+                    allergy: [
+                      {id: 'drug1', name: 'Amoxicillin'},
+                      {id: 'drug2', name: 'Ampicillin'},
+                      {id: 'drug3', name: 'penicillin '},
+                      {id: 'drug4', name: 'tetracycline'},
+                      {id: 'drug5', name: 'ibuprofen'},
+                      {id: 'drug6', name: 'naproxen'},
+                      {id: 'drug7', name: 'Aspirin '},
+                      {id: 'drug8', name: 'Sulfa drugs'},
+                      {id: 'drug9', name: 'Chemotherapy drugs'},
+                      {id: 'drug10', name: 'cetuximab (Erbitux)'},
+                      {id: 'drug11', name: 'rituximab '},
+                      {id: 'drug12', name: 'abacavir (Ziagen) '},
+                      {id: 'drug13', name: 'nevirapine (Viramune)'},
+                      {id: 'drug14', name: 'Insulin'},
+                      {id: 'drug15', name: 'carbamazepine (Tegretol)'},
+                      {id: 'drug16', name: 'lamotrigine (Lamictal)'},
+                      {id: 'drug17', name: 'phenytoin'},
+                      {id: 'drug18', name: 'atracurium'},
+                      {id: 'drug19', name: 'succinylcholine'},
+                      {id: 'drug20', name: 'vecuronium'},
                     ]
                   },
                   ],
