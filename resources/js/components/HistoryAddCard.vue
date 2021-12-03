@@ -25,7 +25,7 @@
               <label for="Description"><strong>Description/Comments</strong></label>
                <Input />
             </b-form-group>
-          
+
             <br><br>
              <ButtonBlock  buttonBlockText="Add Surgery" />
       </form>
@@ -50,6 +50,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.darkBlueInput {
+  border-color: #303c6c;
+  border-width: medium;
+  background: #b4dfe5;
+}
+
+.darkBlueInput:hover {
+  background: #b4dfe5;
+}
+
+.darkBlueInput:focus {
+  border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
+}
+
 h3 {
   font-size: 1.9rem;
 }
