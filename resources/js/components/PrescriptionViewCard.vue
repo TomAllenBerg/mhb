@@ -1,7 +1,7 @@
 <template>
     <div class="colorWrapper">
       <div class="flex">
-        <h3>Current Prescriptions</h3>
+        <h3><i class="fas fa-capsules"></i> Current Prescriptions</h3>
         <b-button size="sm" v-b-modal.modal-1><i class="fas fa-plus"></i> Add prescription</b-button>
       </div>
 
