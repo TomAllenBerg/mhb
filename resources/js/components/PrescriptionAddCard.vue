@@ -49,10 +49,11 @@
             <b-form-group has-error>
               <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
               <select class="form-select" aria-label="multiple select example" v-model="prescription.doctor">
-                <option selected>select</option>
-                <option value="1">Doctor 1</option>
+                <option v-for="doctor in doctors" v-bind:value="doctor.name">{{ doctor.name }}</option>
+                <!-- <option selected>select</option> -->
+                <!-- <option value="1">Doctor 1</option>
                 <option value="2">Doctor 2</option>
-                <option value="3">Doctor 3</option>
+                <option value="3">Doctor 3</option> -->
               </select>
             </b-form-group>
 
@@ -144,9 +145,16 @@ export default {
        route:" ",
        instructions:" ",
        side_effects:" "
-     }
+     },
+     doctors: [],
+		selected:{
+			doctor:''
+		}
    }
  },
+ mounted() {
+           this.getDoctors();
+},
 
  methods: {
    // Method to take data and make an api request to store that data
@@ -170,6 +178,14 @@ export default {
         this.prescription.dosage_amt = '';
         this.prescription.name = '';
   },
+  getDoctors() {
+      axios.get('/api/doctors').then(response => {
+        this.doctors = response.data
+      })
+    .catch( resonse => {
+        console.log('error');
+    })
+  }
  }
 
 };
