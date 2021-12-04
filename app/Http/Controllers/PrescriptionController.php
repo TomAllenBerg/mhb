@@ -99,11 +99,22 @@ class PrescriptionController extends Controller
      * @param  \App\Models\Prescription  $prescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prescription $prescription)
+    // public function destroy(Prescription $prescription)
+    // {
+    //     $prescript = Prescription::find($prescription);
+    //     $prescript->delete();
+    //
+    //     return response()->json('successfully deleted');
+    // }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        $prescript = Prescription::find($prescription);
-        $prescript->delete();
-
-        return response()->json('successfully deleted');
+      Prescription::find($id)->delete();
+      return response()->json('successfully deleted');
     }
 }

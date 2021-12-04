@@ -27,14 +27,14 @@
 
 <script>
 // @ is an alias to /src
-import DoctorInfo from '../components/DoctorInfo.vue';
+// import DoctorInfo from '../components/DoctorInfo.vue';
 import axios from 'axios';
 
 export default {
   name: "DoctorViewCard",
-  components: {
-    DoctorInfo
-  },
+  // components: {
+  //   DoctorInfo
+  // },
   data: function() {
          return  {
            results: []

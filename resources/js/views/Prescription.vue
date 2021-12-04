@@ -10,7 +10,7 @@
     @dismissed="dismissCountDown=0"
     @dismiss-count-down="countDownChanged"
   >
-    Success! Prescription added. Alert will close in {{ dismissCountDown }} seconds...
+    Success! Prescription info changed. Alert will close in {{ dismissCountDown }} seconds...
   </b-alert>
   <!-- <b-button @click="showAlert" variant="info" class="m-1">
     Show alert with count-down timer
@@ -18,7 +18,7 @@
       <b-row>
 
         <b-col class = "l-col">
-          <b-row><PrescriptionViewCard /></b-row>
+          <b-row><PrescriptionViewCard @success-alert="showAlert" ref="doctor"/></b-row>
         </b-col>
         <b-col>
 
@@ -73,6 +73,7 @@ export default {
       },
       showAlert() {
         this.dismissCountDown = this.dismissSecs
+        this.$refs.doctor.getPrescriptions()
       }
     }
 };
