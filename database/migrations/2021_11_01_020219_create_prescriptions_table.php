@@ -27,6 +27,10 @@ class CreatePrescriptionsTable extends Migration
            $table->string('instructions')->nullable($value = true);
            $table->string('side_effects')->nullable($value = true);
            $table->string('doctor')->nullable($value = true);
+           $table->string('location')->nullable($value = true);
+           $table->string('phone')->nullable($value = true);
+           $table->string('pharmacy')->nullable($value = true);
+           $table->string('refill')->nullable($value = true);
            $table->timestamps();
 
            //$table->primary(['user_id', 'doctor_id']);

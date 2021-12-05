@@ -19,6 +19,17 @@ class PrescriptionController extends Controller
     }
 
     /**
+     * Get refill info with id.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function refill($id)
+    {
+      return Prescription::find($id);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,6 +59,10 @@ class PrescriptionController extends Controller
         $prescription->instructions = $request->get('instructions');
         $prescription->side_effects = $request->get('side_effects');
         $prescription->doctor = $request->get('doctor');
+        $prescription->refill = $request->get('refill');
+        $prescription->pharmacy = $request->get('pharmacy');
+        $prescription->location = $request->get('location');
+        $prescription->phone = $request->get('phone');
 
 
         $prescription->save();

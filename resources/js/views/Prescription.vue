@@ -18,7 +18,7 @@
       <b-row>
 
         <b-col class = "l-col">
-          <b-row><PrescriptionViewCard @success-alert="showAlert" ref="doctor"/></b-row>
+          <b-row><PrescriptionViewCard @success-alert="showAlert" @refill="refillCard" ref="doctor"/></b-row>
         </b-col>
         <b-col>
 
@@ -26,7 +26,7 @@
 
             <b-row><PrescriptionAddCard @success-alert="showAlert"/></b-row>
 
-          <b-row><RefillCard /></b-row>
+          <b-row><RefillCard ref="refill"/></b-row>
         </b-col>
       </b-row>
 
@@ -74,6 +74,10 @@ export default {
       showAlert() {
         this.dismissCountDown = this.dismissSecs
         this.$refs.doctor.getPrescriptions()
+      },
+      refillCard(id) {
+        // alert("REFILL!");
+        this.$refs.refill.refillInfo(id)
       }
     }
 };

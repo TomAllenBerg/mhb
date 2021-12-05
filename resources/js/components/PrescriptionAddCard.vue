@@ -6,8 +6,10 @@
 
        <form id="prescriptionAddForm" action="" method="addPost">
         <b-container class="fields">
-        <b-row>
+          <div class="wrap">
+        <b-row class="noHorizScroll">
         <b-col>
+
 
 
           <!-- <b-row>
@@ -97,6 +99,30 @@
           </b-form-group>
           <!-- </b-col>
           </b-row> -->
+          <b-form-group has-error>
+            <label for="refillDate"><strong>Refill Date</strong></label>
+            <b-form-datepicker id="example-datepicker" name="refillDate" v-model="prescription.refill" class="mb-2"></b-form-datepicker>
+          </b-form-group>
+
+          <b-form-group has-error>
+            <label for="pharmacy"><strong>Pharmacy Name</strong></label>
+            <input type="text" class="form-control" name="pharmacy" v-model="prescription.pharmacy">
+            <div class="invalid-feedback"></div>
+          </b-form-group>
+
+          <b-form-group has-error>
+            <label for="location"><strong>Pharmacy Location</strong></label>
+            <input type="text" class="form-control" name="location" v-model="prescription.location">
+            <div class="invalid-feedback"></div>
+          </b-form-group>
+
+          <b-form-group has-error>
+            <label for="phone"><strong>Pharmacy Phone Number</strong></label>
+            <input type="text" class="form-control" name="phone" v-model="prescription.phone">
+            <div class="invalid-feedback"></div>
+          </b-form-group>
+
+
 
 
         <!-- </b-col>
@@ -112,8 +138,9 @@
         </b-col>
 
         </b-row>
-
-        <b-row>
+      </div>
+      <hr>
+        <b-row class="mt-1">
           <b-button class="mr-2 leftMargin" @click="$bvModal.hide('modal-1')">Cancel</b-button>
           <ButtonBlock @click.native="addPost" buttonBlockText="Add Prescription"/>
         </b-row>
@@ -145,7 +172,11 @@ export default {
        dosage_unit:" ",
        route:" ",
        instructions:" ",
-       side_effects:" "
+       side_effects:" ",
+       refill:" ",
+       pharmacy:" ",
+       location:" ",
+       phone:" ",
      },
      doctors: [],
 		selected:{
@@ -193,6 +224,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrap {
+  width: 100%;
+  max-height: 65vh;
+  overflow-y: scroll;
+}
+
+.noHorizScroll {
+  width: 100%;
+}
+
 .flexBox {
   display: flex;
   justify-content: space-between;

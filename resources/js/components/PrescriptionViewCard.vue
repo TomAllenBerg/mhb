@@ -8,11 +8,11 @@
       <b-container class="bv-example-row doctorWrapper" >
         <b-row v-for="(result, index) in results">
           <b-col>
-            <div class="infoLine">
+            <div class="infoLine" @click="refill(result.id)">
               <p class="margin">This is the info for <strong>prescription #{{result.id}}</strong></p>
               <b-container class="fields">
                 <div class="flexy">
-                    <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-prescription-bottle"></i> Name:&emsp;</span>{{result.name}}</p>
+                    <p class="box"><span class="viewTextSpan"><i class="fas fa-prescription"></i> Name:&emsp;</span>{{result.name}}</p>
                     <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-user-md"></i> Doctor:&emsp;</span>{{result.doctor}}</p>
                     <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-balance-scale"></i> Dosage:&emsp;</span>{{result.dosage_amt}} {{result.dosage_unit}}</p>
                     <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-syringe"></i> Route:&emsp;</span>{{result.route}}</p>
@@ -44,7 +44,10 @@ export default {
     this.getPrescriptions()
   },
   methods: {
-      getPrescriptions() {
+      refill: function(id) {
+        this.$emit('refill', id)
+      },
+      getPrescriptions: function() {
         axios.get('/api/prescriptions').then(response => {
           this.results = response.data
         })

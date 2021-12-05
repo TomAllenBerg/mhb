@@ -31,6 +31,7 @@ Route::post('/prescription/store', [PrescriptionController::class, 'store']);
 Route::post('/prescription/edit/{id}', [PrescriptionController::class, 'edit']);
 Route::post('/prescription/update/{id}', [PrescriptionController::class, 'update']);
 Route::delete('/prescription/delete/{id}', [PrescriptionController::class, 'destroy']);
+Route::post('/prescription/refill/{id}', [PrescriptionController::class, 'refill']);
 Route::get('/prescriptions', [PrescriptionController::class, 'index']);
 
 // Routes created to the doctor controller to use functions for modifying and adding entries to the database
