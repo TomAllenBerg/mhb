@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\MedicalHistroyController;
+use App\Http\Controllers\MedicalHistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +42,8 @@ Route::delete('/doctor/delete/{id}', [DoctorController::class, 'destroy']);
 Route::get('/doctors', [DoctorController::class, 'index']);
 
 // Routes created to the medical history controller to use functions for modifying and adding entries to the database
-Route::post('/medical_history/create', [MedicalHistroyController::class, 'store']);
-Route::get('/medical_history/edit/{id}', [MedicalHistroyController::class, 'edit']);
-Route::post('/medical_history/update/{id}', [MedicalHistroyController::class, 'update']);
-Route::delete('/medical_history/delete/{id}', [MedicalHistroyController::class, 'destroy']);
-Route::get('/medical_historys', [MedicalHistroyController::class, 'index']);
+Route::post('/medical_history/create', [MedicalHistoryController::class, 'store']);
+Route::get('/medical_history/edit/{id}', [MedicalHistoryController::class, 'edit']);
+Route::post('/medical_history/update/{id}', [MedicalHistoryController::class, 'update']);
+Route::delete('/medical_history/delete/{id}', [MedicalHistoryController::class, 'destroy']);
+Route::get('/medical_historys', [MedicalHistoryController::class, 'index']);

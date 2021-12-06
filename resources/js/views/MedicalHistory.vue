@@ -7,19 +7,15 @@
                  <BasicInfoAddCard/>
             </div>
             <div class = "surgery">
-                <b-col><HistoryAddCard/></b-col>
+                <b-col><SurgeryAddCard/></b-col>
             </div>    
-            <div class = 'button'>
-                 <ButtonBlock buttonBlockText="View My Medical History"/>
-            </div>
-          
         </div>
     </div>
 </template>
 
 <script>
 import Sidebar from '../components/Sidebar.vue';
-import HistoryAddCard from '../components/HistoryAddCard.vue';
+import SurgeryAddCard from '../components/SurgeryAddCard.vue';
 import ConditionsAddCard from '../components/ConditionsAddCard.vue';
 import ButtonBlock from '../components/ButtonBlock.vue';
 import BasicInfoAddCard from '../components/BasicInfoAddCard.vue';
@@ -35,12 +31,27 @@ import Multiselect from 'vue-multiselect';
         name: 'MedicalHistory',
         components: {
             Sidebar,
-            HistoryAddCard,
+            SurgeryAddCard,
             ConditionsAddCard,
             ButtonBlock,
             BasicInfoAddCard,
             Multiselect
         },
+        methods: {
+   // Method to take data and make an api request to store that data
+   addPost(){
+     let uri = '/api/medical_history/create';
+     this.axios.post(uri, this.medical).then((response) => {
+       // this.$router.push({name: 'Prescription'});
+       // this.modalShow = false
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+       // this.dismissCountDown = this.dismissSecs
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   },
+ }
     };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

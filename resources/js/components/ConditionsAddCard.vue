@@ -2,7 +2,7 @@
     <div class = "ColorWrapper">
      <div>
         <!-- <label class="typo__label">Select Your Medical Conditions</label> -->
-        <multiselect v-model="value" :options="options" :multiple="true" group-values="condition" group-label="type" :group-select="true" placeholder="Type to search for your medical conditions" track-by="Condition" label="Condition"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
+        <multiselect v-model="medical.conditions" :options="conditions" :multiple="true" group-values="condition" group-label="type" :group-select="true" placeholder="Type to search for your medical conditions" track-by="Condition" label="Condition"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
         <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} options selected</span></template>
         <!-- <pre class="language-json"><code>{{ value  }}</code></pre> -->
     </div>
@@ -15,8 +15,10 @@ Vue.component('multiselect', Multiselect);
 export default {
         data(){
             return{
-                value: null,
-                options: [
+                medical:{
+                  conditions:" "
+                },
+                conditions: [
                   {
                     type: 'Medical Conditions',
                     condition: [
@@ -208,10 +210,39 @@ export default {
                   },
                 ]
             }
-        }
+        },
+        methods: {
+   // Method to take data and make an api request to store that data
+   addPost(){
+     let uri = '/api/medical_history/create';
+     this.axios.post(uri, this.medical).then((response) => {
+       // this.$router.push({name: 'Prescription'});
+       // this.modalShow = false
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+       // this.dismissCountDown = this.dismissSecs
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   },
+ }
 }   
               
 </script>
 <style lang="scss" scoped>
+.darkBlueInput {
+  border-color: #303c6c;
+  border-width: medium;
+  background: #b4dfe5;
+}
+
+.darkBlueInput:hover {
+  background: #b4dfe5;
+}
+
+.darkBlueInput:focus {
+  border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
+}
     //@import url(https://cdn.syncfusion.com/ej2/material.css);
 </style>

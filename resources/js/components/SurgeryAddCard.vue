@@ -37,12 +37,12 @@
 
 <script>
 // @ is an alias to /src
-import ButtonBlock from '../components/ButtonBlock.vue';
-import Input from '../components/Input.vue';
+import ButtonBlock from './ButtonBlock.vue';
+import Input from './Input.vue';
 import axios from 'axios'
 
 export default {
-  name: "HistoryAddCard",
+  name: "SurgeryAddCard",
   components: {
     ButtonBlock,
     Input
@@ -62,8 +62,8 @@ export default {
  methods: {
    // Method to take data and make an api request to store that data
    addPost(){
-     let uri = '/api/prescription/store';
-     this.axios.post(uri, this.prescription).then((response) => {
+     let uri = '/api/medical_history/create';
+     this.axios.post(uri, this.medical).then((response) => {
        // this.$router.push({name: 'Prescription'});
        // this.modalShow = false
        this.$bvModal.hide('modal-1')

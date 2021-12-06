@@ -14,17 +14,16 @@ class CreateMedicalHistorysTable extends Migration
     public function up()
     {
         Schema::create('medical_historys', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
             $table->string('name');
             $table->string('DOB');
-            $table->string('bloodtype');
+            $table->string('bloodType');
             $table->string('allergies');
             $table->string('conditions');
-            $table->string('surgery_name');
-            // $table->string('surgeon_name'); 
-            // $table->string('surgery_name');
-            $table->string('surgery_date');
-            $table->string('surgery_description');
+            $table->string('surgeryName');
+            $table->string('surgeon');
+            $table->string('surgeryDate');
+            $table->text('surgeryDesc');
             $table->timestamps();
         });
 
