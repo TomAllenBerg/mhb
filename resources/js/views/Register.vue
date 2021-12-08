@@ -15,24 +15,24 @@
               <b-form-group has-error>
                 <h3>Create account</h3>
                 <label for="Email"><strong>Email</strong></label>
-                <!-- <Input v-model="user.email" inputPlaceholder="Email"/> -->
-                <input v-model="user.email" placeholder="Title" required />
+                <!-- <input class="darkBlueInput form-control" v-model="user.email" inputPlaceholder="Email"/> -->
+                <input class="darkBlueInput form-control" v-model="user.email" placeholder="Email" required />
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Password"><strong>Password</strong></label>
-                   <!-- <Input v-model="user.password" inputPlaceholder="Password"/> -->
-                   <input v-model="user.password" inputPlaceholder="Password" required/>
+                   <!-- <input class="darkBlueInput form-control" v-model="user.password" inputPlaceholder="Password"/> -->
+                   <input class="darkBlueInput form-control" type="password" v-model="user.password" placeholder="Password" required/>
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Confirm Password"><strong>Confirm Password</strong></label>
-                   <!-- <Input v-model="user.confirm_password" inputPlaceholder="Confirm Password"/> -->
-                   <input v-model="user.confirm_password" inputPlaceholder="Confirm Password" required/>
+                   <!-- <input class="darkBlueInput form-control" v-model="user.confirm_password" inputPlaceholder="Confirm Password"/> -->
+                   <input class="darkBlueInput form-control" type="password" v-model="user.confirm_password" placeholder="Confirm Password" required/>
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
@@ -98,6 +98,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.darkBlueInput {
+  border-color: #303c6c;
+  border-width: medium;
+  background: #b4dfe5;
+}
+
+.darkBlueInput:hover {
+  background: #b4dfe5;
+}
+
+.darkBlueInput:focus {
+  border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
+}
+
 .routerLink {
   margin-top: 1em;
 }

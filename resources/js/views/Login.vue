@@ -15,18 +15,18 @@
               <b-form-group has-error>
                 <h3>Log in</h3>
                 <label for="Email"><strong>Email</strong></label>
-                <!-- <Input v-model="user.email" inputPlaceholder="Email"/> -->
-                <input v-model="user.email" inputPlaceholder="Password" required/>
+                <!-- <input class="darkBlueInput form-control" v-model="user.email" inputPlaceholder="Email"/> -->
+                <input class="darkBlueInput form-control" v-model="user.email" Placeholder="Email" required/>
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Password"><strong>Password</strong></label>
-                   <!-- <Input v-model="user.password" type="password" inputPlaceholder="Password"/> -->
-                   <input v-model="user.password" placeholder="Title" required />
-                   <!-- <input v-model="title" placeholder="Title" required />
-                   <input v-model="body" placeholder="Title" required /> -->
+                   <!-- <input class="darkBlueInput form-control" v-model="user.password" type="password" inputPlaceholder="Password"/> -->
+                   <input type="password" class="darkBlueInput form-control" v-model="user.password" placeholder="Password" required />
+                   <!-- <input class="darkBlueInput form-control" v-model="title" placeholder="Title" required />
+                   <input class="darkBlueInput form-control" v-model="body" placeholder="Title" required /> -->
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
@@ -90,6 +90,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.darkBlueInput {
+  border-color: #303c6c;
+  border-width: medium;
+  background: #b4dfe5;
+}
+
+.darkBlueInput:hover {
+  background: #b4dfe5;
+}
+
+.darkBlueInput:focus {
+  border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
+}
+
 .routerLink {
   margin-top: 1em;
 }
