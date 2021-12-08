@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicalHistory;
+use App\Models\Condition;
 use Illuminate\Http\Request;
 
-class MedicalHistoryController extends Controller
+class ConditionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class MedicalHistoryController extends Controller
      */
     public function index()
     {
-        $medHistory = MedicalHistory::all();
-        return response()->json($medHistory);
+        $conditions = Condition::all();
+        return response()->json($conditions);
     }
 
     /**
@@ -36,12 +36,11 @@ class MedicalHistoryController extends Controller
      */
     public function store(Request $request)
     {
-        $medHistory = new MedicalHistory;
-        $medHistory->name = $request->get('name');
-        $medHistory->DOB = $request->get('DOB');
-        $medHistory->bloodType = $request->get('bloodType');
-    
-        $medHistory->save();
+        $conditions = new Condition;
+        $var = (array)($request->get('condition'));
+        $conditions->conditions = serialize($var);
+
+        $conditions->save();
   
         return response()->json('successfully added');
     }
@@ -49,10 +48,10 @@ class MedicalHistoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\conditions  $conditions
      * @return \Illuminate\Http\Response
      */
-    public function show(MedicalHistory $MedicalHistory)
+    public function show(Conditions $conditions)
     {
         //
     }
@@ -60,26 +59,26 @@ class MedicalHistoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Conditions  $Conditions
      * @return \Illuminate\Http\Response
      */
-    public function edit(MedicalHistory $MedicalHistory)
+    public function edit(Conditions $Conditions)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        return response()->json($medHistory);
+        $conditions = Conditions::find($Conditions);
+        return response()->json($conditions);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Conditions  $Conditions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MedicalHistory $MedicalHistory)
+    public function update(Request $request, Conditions $Conditions)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        $medHistory->update($request->all());
+        $conditions = Conditions::find($conditions);
+        $conditions->update($request->all());
 
         return response()->json('successfully updated');
     }
@@ -87,13 +86,13 @@ class MedicalHistoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Conditions  $Conditions
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicalHistory $MedicalHistory)
+    public function destroy(Conditions $Conditions)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        $medHistory->delete();
+        $conditions = Conditions::find($Conditions);
+        $conditions->delete();
 
         return response()->json('successfully deleted');
     }

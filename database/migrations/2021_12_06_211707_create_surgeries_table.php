@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMedicalHistorysTable extends Migration
+class CreateSurgeriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateMedicalHistorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_historys', function (Blueprint $table) {
+        Schema::create('surgeries', function (Blueprint $table) {
             //$table->id();
-            $table->string('name')->primary();
-            $table->string('DOB');
-            $table->string('bloodType') -> nullable($value = true);
+            $table->string('surgeryName') -> nullable($value = true);
+            $table->string('surgeon') -> nullable($value = true);
+            $table->string('surgeryDate') -> nullable($value = true);
+            $table->text('surgeryDesc') -> nullable($value = true);
             $table->timestamps();
         });
-
     }
 
     /**
@@ -30,6 +30,6 @@ class CreateMedicalHistorysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_historys');
+        Schema::dropIfExists('surgeries');
     }
 }

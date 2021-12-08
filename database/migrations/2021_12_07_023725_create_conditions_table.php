@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMedicalHistorysTable extends Migration
+class CreateConditionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateMedicalHistorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('medical_historys', function (Blueprint $table) {
+        Schema::create('conditions', function (Blueprint $table) {
             //$table->id();
-            $table->string('name')->primary();
-            $table->string('DOB');
-            $table->string('bloodType') -> nullable($value = true);
+            $table->string('conditions'); 
             $table->timestamps();
         });
-
     }
 
     /**
@@ -30,6 +27,6 @@ class CreateMedicalHistorysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical_historys');
+        Schema::dropIfExists('conditions');
     }
 }

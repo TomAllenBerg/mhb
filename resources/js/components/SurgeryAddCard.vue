@@ -1,38 +1,48 @@
 <template>
-<div>
-  <!-- <div class="center"> -->
-   <div class="history-add-form">
-    <div id="disabledWrapper">
-       <form id="historyAddForm" action="" method="post">
-       <b-form-group has-error>
-         <h3>Add Past Surgeries</h3>
-         <label for="Surgery Name"><strong>Surgery Name</strong></label>
-         <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryName">
-         <div class="invalid-feedback">
-         </div>
-       </b-form-group>
+
+<b-modal id="modal-1" title="Add Past Surgery" modal-class="modal-background-color" @hide="resetInfoModal">
+
+   <div class="surgery-add-form">
+
+    <form id="surgeryAddForm" action="" method="addPost">
+        <b-container class="fields">
+        <b-row>
+        <b-col>
+
+        <b-form-group has-error>
+            <label for="Surgery Name"><strong>Surgery Name</strong></label>
+             <input type="text" class="form-control" v-model="surgery.surgeryName">
+            <div class="invalid-feedback"></div>
+          </b-form-group>
+
             <b-form-group has-error>
               <label for="Surgeon"><strong>Surgeon Name</strong></label>
-               <input type="text" class="form-control darkBlueInput" v-model="medical.surgeon">
-            </b-form-group>
-            <b-form-group has-error>
-            <label for="Date"><strong>Date</strong></label>
-            <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryDate">
-              <div class="invalid-feedback">
-              </div>
-          </b-form-group>
-            <b-form-group has-error>
-              <label for="Description"><strong>Description/Comments</strong></label>
-               <input type="text" class="form-control darkBlueInput" v-model="medical.surgeryDesc">
+               <input type="text" class="form-control" v-model="surgery.surgeon">
             </b-form-group>
 
-            <br><br>
-             <ButtonBlock @click.native="addPost" buttonBlockText="Add Surgery"/>
+            <b-form-group has-error>
+            <label for="surgeryDate"><strong>Date</strong></label>
+            <b-form-datepicker id="example-datepicker" na me="surgeryDate" v-model="surgery.surgeryDate" class="mb-2"></b-form-datepicker>
+          </b-form-group>
+
+            <b-form-group has-error>
+              <label for="Description"><strong>Description/Comments</strong></label>
+               <input type="text" class="form-control" v-model="surgery.surgeryDesc">
+            </b-form-group>
+
+       </b-col>
+
+        </b-row>
+
+        <b-row>
+            <b-button class="mr-2 leftMargin" @click="$bvModal.hide('modal-1')">Cancel</b-button>
+            <ButtonBlock @click.native="addPost" buttonBlockText="Add Surgery"/>
+        </b-row>
+
+        </b-container>
       </form>
       </div>
-    </div>
-   </div>
-  <!-- </div> -->
+</b-modal>
 </template>
 
 <script>
@@ -50,11 +60,11 @@ export default {
 
   data() {
    return {
-     medical:{
-       surgery_name:" ",
-       surgeon_name:" ",
-       sugery_date:" ",
-       surgery_description:" "
+     surgery:{
+       surgeryName:" ",
+       surgeon:" ",
+       surgeryDate:" ",
+       surgeryDesc:" "
      }
    }
  },
@@ -62,8 +72,8 @@ export default {
  methods: {
    // Method to take data and make an api request to store that data
    addPost(){
-     let uri = '/api/medical_history/create';
-     this.axios.post(uri, this.medical).then((response) => {
+     let uri = '/api/surgeries/store';
+     this.axios.post(uri, this.surgery).then((response) => {
        // this.$router.push({name: 'Prescription'});
        // this.modalShow = false
        this.$bvModal.hide('modal-1')
@@ -73,79 +83,77 @@ export default {
         console.log(error.response.data);
       });
    },
+     resetInfoModal() {
+        this.surgery.surgeryName = '';
+        this.surgery.surgeon = '';
+        this.surgery.surgeryDate = '';
+        this.surgeryDesc = '';
+  },
  }
 
 };
 </script>
 
 <style lang="scss" scoped>
-.darkBlueInput {
-  border-color: #303c6c;
-  border-width: medium;
-  background: #b4dfe5;
+.flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
 }
 
-.darkBlueInput:hover {
-  background: #b4dfe5;
+.leftMargin {
+  margin-left: 15px;
 }
-
-.darkBlueInput:focus {
-  border-color: #0062cc;
-    box-shadow: 0 0 0 0.2rem rgb(29 102 180 / 50%);
-}
-
 h3 {
   font-size: 1.9rem;
 }
 
-.history-add-form {
-		width: 340px;
-    margin: 3em auto;
+::v-deep .modal-content {
+  background-color: #303c6c !important;
+}
+
+::v-deep .modal-title {
+  color: white;
+}
+
+::v-deep .modal-footer {
+  display: none;
+}
+
+::v-deep .close {
+  opacity: 1;
+  color: #fff;
+}
+
+.surgery-add-form {
+		width: auto;
+    margin: 10px;
 	}
 
-.history-add-form form {
-    background-color:#b4dfe5;
+.surgery-add-form form {
+    background-color: #fbe8a6;
     color: #303c6c;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+    padding: 10px;
+
 }
-.history-add-form h2 {
+.surgery-add-form h2 {
     margin: 0 0 15px;
 }
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-}
+// .form-control, .btn {
+//     min-height: 38px;
+//     border-radius: 2px;
+// }
+// .btn {
+//     font-size: 15px;
+//     font-weight: bold;
+// }
 
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+
 
 label {
   margin-bottom: 0.1em;
-  float: left;
-}
-
-.disabled {
-  pointer-events: none;
-  background-color: #bbb;
-  opacity: 0.5;
-    margin-bottom: -200px;
-}
-.disabledWrapper {
-   position: relative;
-   cursor: not-allowed;
-    background: #d2fdff;
-
+  // float: left;
 }
 
 .invalid-feedback {

@@ -7,7 +7,7 @@
        <b-form-group has-error>
          <h3>Personal Information</h3>
          <label for="Full Name"><strong>Full Name</strong></label>
-         <input type="text" class="form-control darkBlueInput" v-model="medical.fullName">
+         <input type="text" class="form-control darkBlueInput" v-model="medical.name">
          <div class="invalid-feedback">
          </div>
        </b-form-group>
@@ -21,28 +21,25 @@
               <div class="invalid-feedback">
               </div>
           </b-form-group>
+              <ButtonBlock @click.native="addPost" buttonBlockText="Submit"/>  
+              <br>
             <b-form-group has-error>
                <div>
-                <!-- <label class="typo__label">Select Your Allergies</label> -->
-                 <multiselect v-model="medical.allergies" :options="allergies" :multiple="true" group-values="allergy" group-label="type" :group-select="true" placeholder="Type to search for your allergies" track-by="name" label="name"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
+                 <multiselect v-model="allergy.allergies" :options="allergies" :multiple="true" group-values="allergy" group-label="type" :group-select="true" placeholder="Type to search for your allergies" ><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
                   <template slot="selection" slot-scope="{ values, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} options selected</span></template>
-               <!-- <pre class="language-json"><code>{{ value  }}</code></pre> -->
+                  <br> <ButtonBlock @click.native="addPost2" buttonBlockText="Submit Allergies"/>
               </div>
               <br>
                <div>
-                <!-- <label class="typo__label">Select Your Medical Conditions</label> -->
-                <multiselect v-model="medical.conditions" :options="conditions" :multiple="true" group-values="condition" group-label="type" :group-select="true" placeholder="Type to search for your medical conditions" track-by="Condition" label="Condition"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
+                <multiselect v-model="condition.conditions" :options="conditions" :multiple="true" group-values="condition" group-label="type" :group-select="true" placeholder="Type to search for your medical conditions"><span slot="noResult">Oops! No elements found. Consider changing the search query.</span></multiselect>
                 <template slot="selection" slot-scope="{ values, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} options selected</span></template>
-                 <!-- <pre class="language-json"><code>{{ value  }}</code></pre> -->
+               <br> <ButtonBlock @click.native="addPost3" buttonBlockText="Submit Conditions"/>
                </div>
             </b-form-group>
-            <br><br>
-           <ButtonBlock @click.native="addPost" buttonBlockText="Submit"/>
       </form>
       </div>
     </div>
    </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -61,202 +58,203 @@ export default {
   },
         data(){
             return {
-              value: null,
               medical:{
-              full_name:" ",
+              name:" ",
               dob:" ",
-              blood_type:" ",
-              allergies:" ",
-              conditions:" ",
+              },
+              allergy:{
+                allergies:[]
+              },
+              condition:{
+                conditions:[]
               },
               conditions: [
                   {
                     type: 'Medical Conditions',
                     condition: [
-                        { Id: 'condition1', Condition: 'Amyotrophic Lateral Sclerosis (ALS)' },
-                        { Id: 'condition2', Condition: 'Arrhythmia' },
-                        { Id: 'condition3', Condition: 'Arthritis' },
-                        { Id: 'condition4', Condition: 'Atrial Fibrillation' },
-                        { Id: 'condition5', Condition: 'Autism' },
-                        { Id: 'condition7', Condition: 'Cataracts' },
-                        { Id: 'condition8', Condition: 'Cholesterol' },
-                        { Id: 'condition9', Condition: 'Chronic Pain' },
-                        { Id: 'condition10', Condition: 'Chronic Kidney Disease' },
-                        { Id: 'condition11', Condition: 'Chronic Obstructive Pulmonary Disease (COPD)' },
-                        { Id: 'condition12', Condition: 'Congestive Heart Failure' },
-                        { Id: 'condition13', Condition: 'Diabetes' },
-                        { Id: 'condition14', Condition: 'Fibromyalgia' },
-                        { Id: 'condition15', Condition: 'Fibroids' },
-                        { Id: 'condition16', Condition: 'Heart Disease' },
-                        { Id: 'condition17', Condition: 'Hepatitis' },
-                        { Id: 'condition18', Condition: 'HIV/AIDS' },
-                        { Id: 'condition19', Condition: 'Hypothyroidism' },
-                        { Id: 'condition20', Condition: 'IBS (Irritable Bowel Syndrome)' },
-                        { Id: 'condition21', Condition: 'Incontinence and OAB (Overactive Bladder)' },
-                        { Id: 'condition22', Condition: 'Inflammatory Bowel Disease (IBD)' },
-                        { Id: 'condition23', Condition: 'Influenza' },
-                        { Id: 'condition24', Condition: 'Insulin Resistance' },
-                        { Id: 'condition25', Condition: 'Leukemia' },
-                        { Id: 'condition26', Condition: 'Liver Failure' },
-                        { Id: 'condition27', Condition: 'Lupus' },
-                        { Id: 'condition28', Condition: 'Macular degeneration' },
-                        { Id: 'condition30', Condition: 'Multiple Sclerosis' },
-                        { Id: 'condition31', Condition: 'Osteoarthritis' },
-                        { Id: 'condition32', Condition: 'Osteoporosis' },
-                        { Id: 'condition33', Condition: 'Parkinson’s Disease' },
-                        { Id: 'condition34', Condition: 'Quadriplegia' },
-                        { Id: 'condition35', Condition: 'Restless Leg Syndrome' },
-                        { Id: 'condition36', Condition: 'Rheumatoid Arthritis' },
-                        { Id: 'condition37', Condition: 'Spina Bifida' },
-                        { Id: 'condition38', Condition: 'Transient Ischemic Attack (TIA)' },
-                        { Id: 'condition39', Condition: 'Ulcerative Colitis' },
+                        'Amyotrophic Lateral Sclerosis (ALS)',
+                        'Arrhythmia',
+                        'Arthritis',
+                        'Atrial Fibrillation',
+                        'Autism',
+                        'Cataracts',
+                        'Cholesterol',
+                        'Chronic Pain',
+                        'Chronic Kidney Disease',
+                        'Chronic Obstructive Pulmonary Disease (COPD)',
+                        'Congestive Heart Failure',
+                        'Diabetes',
+                        'Fibromyalgia',
+                        'Fibroids',
+                        'Heart Disease',
+                        'Hepatitis',
+                        'HIV/AIDS',
+                        'Hypothyroidism',
+                        'IBS (Irritable Bowel Syndrome)',
+                        'Incontinence and OAB (Overactive Bladder)',
+                        'Inflammatory Bowel Disease (IBD)',
+                        'Influenza',
+                        'Insulin Resistance',
+                        'Leukemia',
+                        'Liver Failure',
+                        'Lupus',
+                        'Macular degeneration',
+                        'Multiple Sclerosis',
+                        'Osteoarthritis',
+                        'Osteoporosis',
+                        'Parkinson’s Disease',
+                        'Quadriplegia',
+                        'Restless Leg Syndrome',
+                        'Rheumatoid Arthritis',
+                        'Spina Bifida',
+                        'Transient Ischemic Attack (TIA)',
+                        'Ulcerative Colitis',
                     ]
                   },
                   {
                     type: 'Cancer',
                     condition: [
-                        { Id: 'cancer1', Condition: 'Acute Lymphoblastic Leukemia (ALL)' },
-                        { Id: 'cancer2', Condition: 'Acute Myeloid Leukemia (AML)' },
-                        { Id: 'cancer3', Condition: 'Kaposi Sarcoma (Soft Tissue Sarcoma)' },
-                        { Id: 'cancer4', Condition: 'AIDS-Related Lymphoma (Lymphoma)' },
-                        { Id: 'cancer5', Condition: 'Primary CNS Lymphoma (Lymphoma)' },
-                        { Id: 'cancer6', Condition: 'Anal Cancer' },
-                        { Id: 'cancer7', Condition: 'Basal Cell Carcinoma' },
-                        { Id: 'cancer8', Condition: 'Bile Duct Cancer' },
-                        { Id: 'cancer9', Condition: 'Bladder Cancer' },
-                        { Id: 'cancer10', Condition: 'Bone Cancer (includes Ewing Sarcoma and Osteosarcoma and Malignant Fibrous Histiocytoma)' },
-                        { Id: 'cancer11', Condition: 'Brain Tumors' },
-                        { Id: 'cancer12', Condition: 'Breast Cancer' },
-                        { Id: 'cancer13', Condition: 'Bronchial Tumors (Lung Cancer)' },
-                        { Id: 'cancer14', Condition: 'Burkitt Lymphoma' },
-                        { Id: 'cancer15', Condition: 'Carcinoid Tumor (Gastrointestinal)' },
-                        { Id: 'cancer16', Condition: 'Cardiac (Heart) Tumors' },
-                        { Id: 'cancer17', Condition: 'Cervical Cancer' },
-                        { Id: 'cancer18', Condition: 'Chronic Lymphocytic Leukemia (CLL)' },
-                        { Id: 'cancer19', Condition: 'Chronic Myelogenous Leukemia (CML)' },
-                        { Id: 'cancer20', Condition: 'Chronic Myeloproliferative Neoplasms' },
-                        { Id: 'cancer21', Condition: 'Colorectal Cancer' },
-                        { Id: 'cancer22', Condition: 'Cutaneous T-Cell Lymphoma' },
-                        { Id: 'cancer23', Condition: 'Ductal Carcinoma In Situ (DCIS)' },
-                        { Id: 'cancer24', Condition: 'Endometrial Cancer (Uterine Cancer)' },
-                        { Id: 'cancer25', Condition: 'Esophageal Cancer' },
-                        { Id: 'cancer26', Condition: 'Esthesioneuroblastoma (Head and Neck Cancer)' },
-                        { Id: 'cancer27', Condition: 'Ewing Sarcoma (Bone Cancer)' },
-                        { Id: 'cancer28', Condition: 'Extragonadal Germ Cell Tumor' },
-                        { Id: 'cancer29', Condition: 'Intraocular Melanoma' },
-                        { Id: 'cancer30', Condition: 'Retinoblastoma' },
-                        { Id: 'cancer31', Condition: 'Fallopian Tube Cancer' },
-                        { Id: 'cancer32', Condition: 'Gallbladder Cancer' },
-                        { Id: 'cancer33', Condition: 'Gastric (Stomach) Cancer' },
-                        { Id: 'cancer34', Condition: 'Gastrointestinal Carcinoid Tumor' },
-                        { Id: 'cancer35', Condition: 'Gastrointestinal Stromal Tumors (GIST) (Soft Tissue Sarcoma)' },
-                        { Id: 'cancer36', Condition: 'Gestational Trophoblastic Disease' },
-                        { Id: 'cancer37', Condition: 'Hairy Cell Leukemia' },
-                        { Id: 'cancer38', Condition: 'Head and Neck Cancer' },
-                        { Id: 'cancer39', Condition: 'Hepatocellular (Liver) Cancer' },
-                        { Id: 'cancer40', Condition: 'Histiocytosis, Langerhans Cell' },
-                        { Id: 'cancer41', Condition: 'Hodgkin Lymphoma' },
-                        { Id: 'cancer42', Condition: 'Hypopharyngeal Cancer (Head and Neck Cancer)' },
-                        { Id: 'cancer43', Condition: 'Intraocular Melanoma' },
-                        { Id: 'cancer44', Condition: 'Islet Cell Tumors, Pancreatic Neuroendocrine Tumors' },
-                        { Id: 'cancer45', Condition: 'Kaposi Sarcoma (Soft Tissue Sarcoma)' },
-                        { Id: 'cancer46', Condition: 'Kidney (Renal Cell) Cancer' },
-                        { Id: 'cancer47', Condition: 'Langerhans Cell Histiocytosis' },
-                        { Id: 'cancer48', Condition: 'Laryngeal Cancer (Head and Neck Cancer)' },
-                        { Id: 'cancer49', Condition: 'Lip and Oral Cavity Cancer (Head and Neck Cancer)' },
-                        { Id: 'cancer50', Condition: 'Liver Cancer' },
-                        { Id: 'cancer51', Condition: 'Lung Cancer' },
-                        { Id: 'cancer52', Condition: 'Lymphoma' },
-                        { Id: 'cancer53', Condition: 'Male Breast Cancer' },
-                        { Id: 'cancer54', Condition: 'Melanoma' },
-                        { Id: 'cancer55', Condition: 'Merkel Cell Carcinoma (Skin Cancer)' },
-                        { Id: 'cancer56', Condition: 'Mesothelioma, Malignant' },
-                        { Id: 'cancer57', Condition: 'Metastatic Cancer' },
-                        { Id: 'cancer58', Condition: 'Midline Tract Carcinoma With NUT Gene Changes' },
-                        { Id: 'cancer59', Condition: 'Multiple Endocrine Neoplasia Syndromes' },
-                        { Id: 'cancer60', Condition: 'Multiple Myeloma/Plasma Cell Neoplasms' },
-                        { Id: 'cancer61', Condition: 'Nasal Cavity and Paranasal Sinus Cancer' },
-                        { Id: 'cancer62', Condition: 'Nasopharyngeal Cancer' },
-                        { Id: 'cancer63', Condition: 'Oral Cancer, Lip and Oral Cavity Cancer and Oropharyngeal Cancer' },
-                        { Id: 'cancer64', Condition: 'Osteosarcoma and Undifferentiated Pleomorphic Sarcoma of Bone Treatment' },
-                        { Id: 'cancer65', Condition: 'Ovarian Cancer' },
-                        { Id: 'cancer66', Condition: 'Pancreatic Cancer' },
-                        { Id: 'cancer67', Condition: 'Paraganglioma' },
-                        { Id: 'cancer68', Condition: 'Parathyroid Cancer' },
-                        { Id: 'cancer69', Condition: 'Penile Cancer' },
-                        { Id: 'cancer70', Condition: 'Pharyngeal Cancer ' },
-                        { Id: 'cancer71', Condition: 'Pheochromocytoma' },
-                        { Id: 'cancer72', Condition: 'Pituitary Tumor' },
-                        { Id: 'cancer73', Condition: 'Plasma Cell Neoplasm/Multiple Myeloma' },
-                        { Id: 'cancer74', Condition: 'Primary Central Nervous System (CNS) Lymphoma' },
-                        { Id: 'cancer75', Condition: 'Primary Peritoneal Cancer' },
-                        { Id: 'cancer76', Condition: 'Prostate Cancer' },
-                        { Id: 'cancer77', Condition: 'Rectal Cancer' },
-                        { Id: 'cancer78', Condition: 'Renal Cell (Kidney) Cancer' },
-                        { Id: 'cancer79', Condition: 'Retinoblastoma' },
-                        { Id: 'cancer80', Condition: 'Salivary Gland Cancer' },
-                        { Id: 'cancer81', Condition: 'Ewing Sarcoma (Bone Cancer)' },
-                        { Id: 'cancer82', Condition: 'Kaposi Sarcoma (Soft Tissue Sarcoma)' },
-                        { Id: 'cancer83', Condition: 'Osteosarcoma (Bone Cancer)' },
-                        { Id: 'cancer84', Condition: 'Soft Tissue Sarcoma' },
-                        { Id: 'cancer85', Condition: 'Uterine Sarcoma' },
-                        { Id: 'cancer86', Condition: 'Skin Cancer' },
-                        { Id: 'cancer87', Condition: 'Small Intestine Cancer' },
-                        { Id: 'cancer88', Condition: 'Soft Tissue Sarcoma' },
-                        { Id: 'cancer89', Condition: 'Thyroid Cancer' },
-                        { Id: 'cancer90', Condition: 'Tracheobronchial Tumors' },
-                        { Id: 'cancer91', Condition: 'Urethral Cancer' },
-                        { Id: 'cancer92', Condition: 'Uterine Cancer, Endometrial' },
-                        { Id: 'cancer93', Condition: 'Uterine Sarcoma' },
-                        { Id: 'cancer94', Condition: 'Vaginal Cancer' },
-                        { Id: 'cancer95', Condition: 'Vascular Tumors (Soft Tissue Sarcoma)' },
-                        { Id: 'cancer96', Condition: 'Vulvar Cancer' },
+                        'Acute Lymphoblastic Leukemia (ALL)',
+                        'Acute Myeloid Leukemia (AML)',
+                        'Kaposi Sarcoma (Soft Tissue Sarcoma)',
+                        'AIDS-Related Lymphoma (Lymphoma)',
+                        'Primary CNS Lymphoma (Lymphoma)',
+                        'Anal Cancer',
+                        'Basal Cell Carcinoma',
+                        'Bile Duct Cancer',
+                        'Bladder Cancer',
+                         'Bone Cancer (includes Ewing Sarcoma and Osteosarcoma and Malignant Fibrous Histiocytoma)',
+                         'Brain Tumors',
+                         'Breast Cancer',
+                         'Bronchial Tumors (Lung Cancer)',
+                         'Burkitt Lymphoma',
+                         'Carcinoid Tumor (Gastrointestinal)',
+                         'Cardiac (Heart) Tumors',
+                         'Cervical Cancer',
+                         'Chronic Lymphocytic Leukemia (CLL)',
+                         'Chronic Myelogenous Leukemia (CML)',
+                         'Chronic Myeloproliferative Neoplasms',
+                         'Colorectal Cancer',
+                         'Cutaneous T-Cell Lymphoma',
+                         'Ductal Carcinoma In Situ (DCIS)',
+                         'Endometrial Cancer (Uterine Cancer)',
+                         'Esophageal Cancer',
+                         'Esthesioneuroblastoma (Head and Neck Cancer)',
+                         'Ewing Sarcoma (Bone Cancer)',
+                         'Extragonadal Germ Cell Tumor',
+                         'Intraocular Melanoma',
+                         'Retinoblastoma',
+                         'Fallopian Tube Cancer',
+                         'Gallbladder Cancer',
+                         'Gastric (Stomach) Cancer',
+                         'Gastrointestinal Carcinoid Tumor',
+                         'Gastrointestinal Stromal Tumors (GIST) (Soft Tissue Sarcoma)',
+                         'Gestational Trophoblastic Disease',
+                         'Hairy Cell Leukemia',
+                         'Head and Neck Cancer',
+                         'Hepatocellular (Liver) Cancer',
+                         'Histiocytosis, Langerhans Cell',
+                         'Hodgkin Lymphoma',
+                         'Hypopharyngeal Cancer (Head and Neck Cancer)',
+                         'Intraocular Melanoma',
+                         'Islet Cell Tumors, Pancreatic Neuroendocrine Tumors',
+                         'Kaposi Sarcoma (Soft Tissue Sarcoma)',
+                         'Kidney (Renal Cell) Cancer',
+                         'Langerhans Cell Histiocytosis',
+                         'Laryngeal Cancer (Head and Neck Cancer)',
+                         'Lip and Oral Cavity Cancer (Head and Neck Cancer)',
+                         'Liver Cancer',
+                         'Lung Cancer',
+                         'Lymphoma',
+                         'Male Breast Cancer',
+                         'Melanoma',
+                         'Merkel Cell Carcinoma (Skin Cancer)',
+                         'Mesothelioma, Malignant',
+                         'Metastatic Cancer',
+                         'Midline Tract Carcinoma With NUT Gene Changes',
+                         'Multiple Endocrine Neoplasia Syndromes',
+                         'Multiple Myeloma/Plasma Cell Neoplasms',
+                         'Nasal Cavity and Paranasal Sinus Cancer',
+                         'Nasopharyngeal Cancer',
+                         'Oral Cancer, Lip and Oral Cavity Cancer and Oropharyngeal Cancer',
+                         'Osteosarcoma and Undifferentiated Pleomorphic Sarcoma of Bone Treatment',
+                         'Ovarian Cancer',
+                         'Pancreatic Cancer',
+                         'Paraganglioma',
+                         'Parathyroid Cancer',
+                         'Penile Cancer',
+                         'Pharyngeal Cancer ',
+                         'Pheochromocytoma',
+                         'Pituitary Tumor',
+                         'Plasma Cell Neoplasm/Multiple Myeloma',
+                         'Primary Central Nervous System (CNS) Lymphoma',
+                         'Primary Peritoneal Cancer',
+                         'Prostate Cancer',
+                         'Rectal Cancer',
+                         'Renal Cell (Kidney) Cancer',
+                         'Retinoblastoma',
+                         'Salivary Gland Cancer',
+                         'Ewing Sarcoma (Bone Cancer)',
+                         'Kaposi Sarcoma (Soft Tissue Sarcoma)',
+                         'Osteosarcoma (Bone Cancer)',
+                         'Soft Tissue Sarcoma',
+                         'Uterine Sarcoma',
+                         'Skin Cancer',
+                         'Small Intestine Cancer',
+                         'Soft Tissue Sarcoma',
+                         'Thyroid Cancer',
+                         'Tracheobronchial Tumors',
+                         'Urethral Cancer',
+                         'Uterine Cancer, Endometrial',
+                         'Uterine Sarcoma',
+                         'Vaginal Cancer',
+                         'Vascular Tumors (Soft Tissue Sarcoma)',
+                         'Vulvar Cancer',
                     ]
                   },
                   {
                     type: 'Heart Conditions',
                     condition: [
-                       { Id: 'heart1', Condition: 'Coronary heart disease' } , 
-                       { Id: 'heart2', Condition: 'Angina' } , 
-                       { Id: 'heart3', Condition: 'Unstable angina' } , 
-                       { Id: 'heart4', Condition: 'Heart failure' } , 
-                       { Id: 'heart5', Condition: 'Arrhythmia (abnormal heart rhythms)' } , 
-                       { Id: 'heart6', Condition: 'Valve disease ' } , 
-                       { Id: 'heart7', Condition: 'High blood pressure' } , 
-                       { Id: 'heart8', Condition: 'Congenital heart conditions' } ,
-                       { Id: 'heart9', Condition: 'Pericardial disease' } , 
-                       { Id: 'heart10', Condition: 'Peripheral vascular disease' } , 
-                       { Id: 'heart11', Condition: 'Rheumatic heart disease' } , 
-                       { Id: 'heart12', Condition: 'Stroke' } , 
-                       { Id: 'heart13', Condition: 'Vascular disease (blood vessel disease)' } , 
-                       { Id: 'heart14', Condition: 'Deep Vein Thrombosis and Pulmonary Embolism' } , 
-                       { Id: 'heart15', Condition: 'Aortic stenosis' } , 
-                       { Id: 'heart16', Condition: 'Mitral valve insufficiency' } ,
-                       
+                       'Coronary heart disease', 
+                       'Angina', 
+                       'Unstable angina', 
+                       'Heart failure', 
+                       'Arrhythmia (abnormal heart rhythms)', 
+                       'Valve disease ', 
+                       'High blood pressure', 
+                       'Congenital heart conditions',
+                       'Pericardial disease', 
+                        'Peripheral vascular disease', 
+                        'Rheumatic heart disease', 
+                        'Stroke', 
+                        'Vascular disease (blood vessel disease)', 
+                        'Deep Vein Thrombosis and Pulmonary Embolism', 
+                        'Aortic stenosis', 
+                        'Mitral valve insufficiency',
                     ]
                   },
                   {
                     type: 'Congenital disorders',
                     condition: [
-                       { Id: 'con1', Condition: 'cleft lip and cleft palate' } , 
-                       { Id: 'con2', Condition: 'congenital heart disease ' } , 
-                       { Id: 'con3', Condition: 'cerebral palsy' } , 
-                       { Id: 'con4', Condition: 'Fragile X syndrome' } , 
-                       { Id: 'con5', Condition: 'Down syndrome' } , 
-                       { Id: 'con6', Condition: 'spina bifida' } , 
-                       { Id: 'con7', Condition: 'cystic fibrosis' } , 
-                       { Id: 'con8', Condition: 'Cleft lip alone' } ,
-                       { Id: 'con9', Condition: 'Cleft palate alone' } , 
-                       { Id: 'con10', Condition: 'Talipes equinovarus' } , 
-                       { Id: 'con11', Condition: 'Reduction defects of upper and lower limbs (longitudinal, transverse, and intercalary)' } , 
-                       { Id: 'con12', Condition: 'Exomphalos (omphalocele)' } , 
-                       { Id: 'con13', Condition: 'Gastroschisis' } , 
-                       { Id: 'con14', Condition: 'Hypospadias' } , 
-                       { Id: 'con15', Condition: 'Microtia/Anotia' } , 
-                       { Id: 'con16', Condition: 'Anencephaly' } ,
-                       { Id: 'con17', Condition: 'Craniorachischisis' } , 
-                       { Id: 'con18', Condition: 'Iniencephaly' } , 
-                       { Id: 'con19', Condition: 'Encephalocele' } , 
+                       'cleft lip and cleft palate', 
+                       'congenital heart disease ', 
+                       'cerebral palsy', 
+                       'Fragile X syndrome', 
+                       'Down syndrome', 
+                       'spina bifida', 
+                       'cystic fibrosis', 
+                       'Cleft lip alone',
+                       'Cleft palate alone', 
+                       'Talipes equinovarus', 
+                       'Reduction defects of upper and lower limbs (longitudinal, transverse, and intercalary)', 
+                       'Exomphalos (omphalocele)', 
+                       'Gastroschisis', 
+                       'Hypospadias', 
+                       'Microtia/Anotia', 
+                       'Anencephaly',
+                       'Craniorachischisis', 
+                       'Iniencephaly', 
+                       'Encephalocele', 
                     ],
                   },
                 ],
@@ -264,79 +262,80 @@ export default {
                   {
                     type: 'Animal Allergies',
                     allergy: [
-                      {id: 'animal1', name: 'Dog'},
-                      {id: 'animal2', name: 'Cat'},
-                      {id: 'animal3', name: 'Rabbit'},
-                      {id: 'animal4', name: 'Small Rodent'},
+                      'Dog',
+                      'Cat',
+                      'Rabbit',
+                      'Small Rodent',
                   ]
                   },
                   {
                     type: 'Insect Allergies',
                     allergy: [
-                      {id: 'insect1', name: 'Bee'},
-                      {id: 'insect2', name: 'Wasp'},
-                      {id: 'insect3', name: 'Hornet'},
-                      {id: 'insect4', name: 'Yellow-Jacket'},
-                      {id: 'insect5', name: 'Mosquitos'},
-                      {id: 'insect6', name: 'Bed Bugs'},
-                      {id: 'insect7', name: 'Fleas'},
-                      {id: 'insect8', name: 'Cockroaches'},
+                      'Bee',
+                      'Wasp',
+                      'Hornet',
+                      'Yellow-Jacket',
+                      'Mosquitos',
+                      'Bed Bugs',
+                      'Fleas',
+                      'Cockroaches',
                     ]
+                    
                   },
                    {
                     type: 'Other Allergies',
                     allergy: [
-                      {id: 'other1', name: 'Dust'},
-                      {id: 'other2', name: 'Mold'},
-                      {id: 'other3', name: 'Pollen'},
-                      {id: 'other4', name: 'Latex'},
-                  ]
+                      'Dust',
+                      'Mold',
+                      'Pollen',
+                      'Latex',
+                    ]
                   },
                   {
                     type: 'Food Allergies',
                     allergy: [
-                      {id: 'food1', name: 'Fish'},
-                      {id: 'food2', name: 'Red Meat'},
-                      {id: 'food3', name: 'Milk'},
-                      {id: 'food4', name: 'Egg'},
-                      {id: 'food5', name: 'Peanut'},
-                      {id: 'food6', name: 'Tree nut'},
-                      {id: 'food7', name: 'Soy'},
-                      {id: 'food8', name: 'Wheat'},
-                      {id: 'food9', name: 'Shell Fish'},
-                      {id: 'food10', name: 'Banana'},
-                      {id: 'food11', name: 'Linseed'},
-                      {id: 'food12', name: 'Sesame seed'},
-                      {id: 'food13', name: 'Avocado'},
-                      {id: 'food14', name: 'Kiwi fruit'},
-                      {id: 'food15', name: 'Garlic'},
+                      'Fish',
+                      'Red Meat',
+                      'Milk',
+                      'Egg',
+                      'Peanut',
+                      'Tree nut',
+                      'Soy',
+                      'Wheat',
+                      'Shell Fish',
+                       'Banana',
+                       'Linseed',
+                       'Sesame seed',
+                       'Avocado',
+                       'Kiwi fruit',
+                       'Garlic',
                     ]
                   },
                   {
                     type: 'Drug Allergies',
                     allergy: [
-                      {id: 'drug1', name: 'Amoxicillin'},
-                      {id: 'drug2', name: 'Ampicillin'},
-                      {id: 'drug3', name: 'penicillin '},
-                      {id: 'drug4', name: 'tetracycline'},
-                      {id: 'drug5', name: 'ibuprofen'},
-                      {id: 'drug6', name: 'naproxen'},
-                      {id: 'drug7', name: 'Aspirin '},
-                      {id: 'drug8', name: 'Sulfa drugs'},
-                      {id: 'drug9', name: 'Chemotherapy drugs'},
-                      {id: 'drug10', name: 'cetuximab (Erbitux)'},
-                      {id: 'drug11', name: 'rituximab '},
-                      {id: 'drug12', name: 'abacavir (Ziagen) '},
-                      {id: 'drug13', name: 'nevirapine (Viramune)'},
-                      {id: 'drug14', name: 'Insulin'},
-                      {id: 'drug15', name: 'carbamazepine (Tegretol)'},
-                      {id: 'drug16', name: 'lamotrigine (Lamictal)'},
-                      {id: 'drug17', name: 'phenytoin'},
-                      {id: 'drug18', name: 'atracurium'},
-                      {id: 'drug19', name: 'succinylcholine'},
-                      {id: 'drug20', name: 'vecuronium'},
+                      'Amoxicillin',
+                      'Ampicillin',
+                      'penicillin ',
+                      'tetracycline',
+                      'ibuprofen',
+                      'naproxen',
+                      'Aspirin ',
+                      'Sulfa drugs',
+                      'Chemotherapy drugs',
+                       'cetuximab (Erbitux)',
+                       'rituximab ',
+                       'abacavir (Ziagen) ',
+                       'nevirapine (Viramune)',
+                       'Insulin',
+                       'carbamazepine (Tegretol)',
+                       'lamotrigine (Lamictal)',
+                       'phenytoin',
+                       'atracurium',
+                       'succinylcholine',
+                       'vecuronium',
                     ]
-                  },
+                  }
                   ],
             } 
         },
@@ -344,13 +343,30 @@ export default {
  methods: {
    // Method to take data and make an api request to store that data
    addPost(){
-     let uri = '/api/medical_history/create';
+     let uri = '/api/medical_history/store';
      this.axios.post(uri, this.medical).then((response) => {
-       // this.$router.push({name: 'Prescription'});
-       // this.modalShow = false
        this.$bvModal.hide('modal-1')
        this.$emit('success-alert')
-       // this.dismissCountDown = this.dismissSecs
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   },
+   addPost2(){
+     let uri = '/api/allergies/store';
+     let array = Object.values(this.allergy)
+     this.axios.post(uri, array).then((response) => {
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
+     }).catch(function(error) {
+        console.log(error.response.data);
+      });
+   },
+     addPost3(){
+     let uri = '/api/conditions/store';
+     let array = Object.values(this.condition)
+     this.axios.post(uri, array).then((response) => {
+       this.$bvModal.hide('modal-1')
+       this.$emit('success-alert')
      }).catch(function(error) {
         console.log(error.response.data);
       });

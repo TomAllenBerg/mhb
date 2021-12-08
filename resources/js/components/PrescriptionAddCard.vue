@@ -259,7 +259,7 @@ h3 {
   display: none;
 }
 
-::v-deep .close {
+::seep .close {
   opacity: 1;
   color: #fff;
 }

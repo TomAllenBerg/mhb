@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicalHistory;
+use App\Models\Surgery;
 use Illuminate\Http\Request;
 
-class MedicalHistoryController extends Controller
+class SurgeryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class MedicalHistoryController extends Controller
      */
     public function index()
     {
-        $medHistory = MedicalHistory::all();
-        return response()->json($medHistory);
+        $surgeries = Surgery::all();
+        return response()->json($surgeries);
     }
 
     /**
@@ -36,23 +36,29 @@ class MedicalHistoryController extends Controller
      */
     public function store(Request $request)
     {
-        $medHistory = new MedicalHistory;
-        $medHistory->name = $request->get('name');
-        $medHistory->DOB = $request->get('DOB');
-        $medHistory->bloodType = $request->get('bloodType');
-    
-        $medHistory->save();
+        $surgeries = new Surgery;
+        $surgeries->surgeryName = $request->get('surgeryName');
+        $surgeries->surgeon = $request->get('surgeon');
+        $surgeries->surgeryDate = $request->get('surgeryDate');
+        $surgeries->surgeryDesc = $request->get('surgeryDesc');
+
   
+        $surgeries->save();
+  
+        return response()->json('successfully added');
+    
+        $surgeries->save();
+    
         return response()->json('successfully added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\surgeries  $surgeries
      * @return \Illuminate\Http\Response
      */
-    public function show(MedicalHistory $MedicalHistory)
+    public function show(Surgery $surgeries)
     {
         //
     }
@@ -60,26 +66,26 @@ class MedicalHistoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Surgery  $Surgery
      * @return \Illuminate\Http\Response
      */
-    public function edit(MedicalHistory $MedicalHistory)
+    public function edit(Surgery $Surgery)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        return response()->json($medHistory);
+        $surgeries = Surgery::find($Surgery);
+        return response()->json($surgeries);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Surgery  $Surgery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MedicalHistory $MedicalHistory)
+    public function update(Request $request, Surgery $Surgery)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        $medHistory->update($request->all());
+        $surgeries = Surgery::find($surgeries);
+        $surgeries->update($request->all());
 
         return response()->json('successfully updated');
     }
@@ -87,13 +93,13 @@ class MedicalHistoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicalHistory  $MedicalHistory
+     * @param  \App\Models\Surgery  $Surgery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicalHistory $MedicalHistory)
+    public function destroy(Surgery $Surgery)
     {
-        $medHistory = MedicalHistory::find($MedicalHistory);
-        $medHistory->delete();
+        $surgeries = Surgery::find($Surgery);
+        $surgeries->delete();
 
         return response()->json('successfully deleted');
     }

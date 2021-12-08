@@ -1,99 +1,67 @@
 <template>
     <div class="medical">
         <Sidebar/>
-        <h1>Medical History</h1>
-        <div class="container">
-              <div class = 'basicInfo'>
-                 <BasicInfoAddCard/>
-            </div>
-            <div class = "surgery">
-                <b-col><SurgeryAddCard/></b-col>
-            </div>    
-        </div>
-    </div>
+        <h1><strong>Medical History</strong></h1>
+        <b-container class="bv-example-row">
+            <b-alert
+                :show="dismissCountDown"
+                dismissible
+                variant="success"
+                @dismissed="dismissCountDown=0"
+                @dismiss-count-down="countDownChanged"
+            >
+            Success! Surgery information changed. Alert will close in {{ dismissCountDown }} seconds...
+        </b-alert>
+       <b-row>
+        <b-col><SurgeryViewCard @success-alert="showAlert" ref="surgery"/></b-col>
+
+        <b-col><SurgeryAddCard @success-alert="showAlert"/></b-col>
+
+        <b-col class="mb-2"><BasicInfoAddCard ref="basic"/></b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
 import Sidebar from '../components/Sidebar.vue';
 import SurgeryAddCard from '../components/SurgeryAddCard.vue';
-import ConditionsAddCard from '../components/ConditionsAddCard.vue';
 import ButtonBlock from '../components/ButtonBlock.vue';
 import BasicInfoAddCard from '../components/BasicInfoAddCard.vue';
 import Multiselect from 'vue-multiselect';
+import SurgeryViewCard from '../components/SurgeryViewCard.vue';
   Vue.component('multiselect', Multiselect)
     export default {
         data(){
             return{
-                value: null,
-                options: ["a1", "a2", "a3"],
-            }
-        },
+            dismissSecs: 5,
+            dismissCountDown: 0
+        }
+            },
         name: 'MedicalHistory',
         components: {
             Sidebar,
             SurgeryAddCard,
-            ConditionsAddCard,
             ButtonBlock,
             BasicInfoAddCard,
-            Multiselect
+            Multiselect,
+            SurgeryViewCard,
         },
         methods: {
-   // Method to take data and make an api request to store that data
-   addPost(){
-     let uri = '/api/medical_history/create';
-     this.axios.post(uri, this.medical).then((response) => {
-       // this.$router.push({name: 'Prescription'});
-       // this.modalShow = false
-       this.$bvModal.hide('modal-1')
-       this.$emit('success-alert')
-       // this.dismissCountDown = this.dismissSecs
-     }).catch(function(error) {
-        console.log(error.response.data);
-      });
-   },
+      countDownChanged(dismissCountDown) {
+        this.dismissCountDown = dismissCountDown
+      },
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs
+      }
+    },
  }
-    };
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss" scoped>
-
     .medical {
-        margin-bottom: 1px;
-        margin-right: 1px;
-        background: #303c6c;
+        color: white;
         padding: 20px;
         margin-left: 130px;/*account for sidebar*/
-    }
-    .medical h1 {
-        color: #ffffff;
-        font-family: Helvetica, 'Open Sans', Arial, sans-serif;
-        font-size: 68px;
-        font-weight: bold;
-    }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: stretch;
-        gap: 60px;
-    }
-    .conditions{
-        margin: auto;
-        width: 50%;
-        order: 2;
-
-    }
-    .basicInfo{
-        order: 1;
-
-    }
-    .ConditionsAddCard{
-    outline: 10px solid #ffff;
-    }
-    .surgery{
-        order: 3;
-    }
-    .button{
-        order: 4;
     }
 </style>
