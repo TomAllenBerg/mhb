@@ -15,21 +15,23 @@
               <b-form-group has-error>
                 <h3>Log in</h3>
                 <label for="Email"><strong>Email</strong></label>
-                <Input v-model="body" inputPlaceholder="Email"/>
+                <!-- <Input v-model="user.email" inputPlaceholder="Email"/> -->
+                <input v-model="user.email" inputPlaceholder="Password" required/>
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Password"><strong>Password</strong></label>
-                   <Input v-model="title" type="password" inputPlaceholder="Password"/>
+                   <!-- <Input v-model="user.password" type="password" inputPlaceholder="Password"/> -->
+                   <input v-model="user.password" placeholder="Title" required />
                    <!-- <input v-model="title" placeholder="Title" required />
                    <input v-model="body" placeholder="Title" required /> -->
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
 
-                 <ButtonBlock @click.native="greet" buttonBlockText="Log in" />
+                 <ButtonBlock @click.native="loginUser" buttonBlockText="Log in" />
 
                  <p class="routerLink">Need an account? <router-link to="/register">Sign up</router-link></p>
              </form>
@@ -61,29 +63,28 @@ export default {
     Logo
   },
   data: function() {
-    return {
-      post: "",
-      title: "",
-      body: "",
-       name: 'Vue.js'
+    return{
+      user:{
+      email: "",
+      password: "",
+       }
     };
   },
   // define methods under the `methods` object
   methods: {
-    greet: function (event) {
-      // `this` inside methods points to the Vue instance
-      // alert('Hello ' + this.name + '!')
-      // // `event` is the native DOM event
-      // if (event) {
-      //   alert(event.target.tagName)
-      // }
-      const postData = { title: this.title, body: this.body };
-      axios
-        .get("/myhealthbin/api/prescriptions", userid)
-        .then(res => {
-          console.log(res.body);
-        });
-    }
+    loginUser(){
+    let uri = '/api/user/login';
+    this.axios.post(uri, this.user).then((response) => {
+      this.$router.push({path: '/'});
+      console.log('logged in successfully');
+      console.log(this.user);
+      // this.dismissCountDown = this.dismissSecs
+    }).catch((error) => {
+       console.log(this.user);
+       this.errors = error.response.data.errors;
+       console.log(error.response.data);
+     });
+    },
   }
 };
 </script>

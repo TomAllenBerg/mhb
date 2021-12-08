@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     // Unhidden assigned attributes.
     protected $fillable = [
-        'name',
+
         'email',
         'password',
     ];
@@ -27,6 +27,6 @@ class User extends Authenticatable
 
     // Casted assigned attributes.
     protected $casts = [
-        'email_verified_at' => 'datetime',
+       // 'email_verified_at' => 'datetime',
     ];
 }

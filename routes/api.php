@@ -8,6 +8,7 @@ use App\Http\Controllers\MedicalHistoryController;
 use App\Http\Controllers\SurgeryController;
 use App\Http\Controllers\AllergyController;
 use App\Http\Controllers\ConditionController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,8 @@ Route::post('/conditions/store', [ConditionController::class, 'store']);
 Route::get('/conditions/edit/{id}', [ConditionController::class, 'edit']);
 Route::post('/conditions/update/{id}', [ConditionController::class, 'update']);
 Route::delete('/conditions/delete/{id}', [ConditionController::class, 'destroy']);
+
+
+
+Route::post('/user/register', [UserController::class, 'register']);
+Route::post('/user/login', [UserController::class, 'login']);

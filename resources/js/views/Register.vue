@@ -15,27 +15,30 @@
               <b-form-group has-error>
                 <h3>Create account</h3>
                 <label for="Email"><strong>Email</strong></label>
-                <Input v-model="body" inputPlaceholder="Email"/>
+                <!-- <Input v-model="user.email" inputPlaceholder="Email"/> -->
+                <input v-model="user.email" placeholder="Title" required />
                 <div class="invalid-feedback">
                 </div>
               </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Password"><strong>Password</strong></label>
-                   <Input v-model="title" inputPlaceholder="Password"/>
+                   <!-- <Input v-model="user.password" inputPlaceholder="Password"/> -->
+                   <input v-model="user.password" inputPlaceholder="Password" required/>
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
 
                  <b-form-group has-error>
                    <label for="Confirm Password"><strong>Confirm Password</strong></label>
-                   <Input v-model="title" inputPlaceholder="Confirm Password"/>
+                   <!-- <Input v-model="user.confirm_password" inputPlaceholder="Confirm Password"/> -->
+                   <input v-model="user.confirm_password" inputPlaceholder="Confirm Password" required/>
                      <div class="invalid-feedback">
                      </div>
                  </b-form-group>
 
 
-                 <ButtonBlock @click.native="greet" buttonBlockText="Sign up" />
+                 <ButtonBlock @click.native="addUser" buttonBlockText="Sign up" />
 
                  <p class="routerLink">Have an account? <router-link to="/login">Login</router-link></p>
              </form>
@@ -67,29 +70,29 @@ export default {
     Logo
   },
   data: function() {
-    return {
-      post: "",
-      title: "",
-      body: "",
-       name: 'Vue.js'
+    return{
+      user:{
+      email: "",
+      password: "",
+      confirm_password: "",
+       }
     };
   },
   // define methods under the `methods` object
   methods: {
-    greet: function (event) {
-      // `this` inside methods points to the Vue instance
-      // alert('Hello ' + this.name + '!')
-      // // `event` is the native DOM event
-      // if (event) {
-      //   alert(event.target.tagName)
-      // }
-      const postData = { title: this.title, body: this.body };
-      axios
-        .post("https://jsonplaceholder.typicode.com/posts", postData)
-        .then(res => {
-          console.log(res.body);
-        });
-    }
+    addUser(){
+    let uri = '/api/user/register';
+    this.axios.post(uri, this.user).then((response) => {
+      this.$router.push({path: '/'});
+      console.log('Added Successfully');
+      console.log(this.user);
+      // this.dismissCountDown = this.dismissSecs
+    }).catch((error) => {
+       console.log(this.user);
+       this.errors = error.response.data.errors;
+       console.log(error.response.data);
+     });
+    },
   }
 };
 </script>
