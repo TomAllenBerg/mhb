@@ -46,10 +46,6 @@ class SurgeryController extends Controller
         $surgeries->save();
   
         return response()->json('successfully added');
-    
-        $surgeries->save();
-    
-        return response()->json('successfully added');
     }
 
     /**

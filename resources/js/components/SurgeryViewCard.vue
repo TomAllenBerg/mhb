@@ -9,7 +9,7 @@
         <b-row v-for="(result, index) in results">
           <b-col>
             <div class="infoLine">
-              <p class="margin">This is the info for<strong>surgery #{{result.id}}</strong></p>
+              <p class="margin">This is the info for<strong> Surgeries{{result.id}}</strong></p>
               <b-container class="fields">
                 <div class="flexy">
                     <p ><i class="fas fa-notes-medical"></i> Name: {{result.surgeryName}}</p>
@@ -48,7 +48,7 @@ export default {
       },
       deleteData: function(id) {
         if(confirm("Are you sure you want to remove the information for this surgery?")) {
-           axios.post('/api/surgery/delete/' + id, {_method: 'DELETE'})
+           axios.post('/api/surgeries/delete/' + id, {_method: 'DELETE'})
            .then(response => {
              this.getSurgeries()
              this.$emit('success-alert')
@@ -60,30 +60,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p {
-  margin-bottom: 0;
-  height:100%;
-}
+svg {
+    margin-right: 7px;
+ }
+ .svgNoMargin {
+   margin-right: 0;
+ }
+ .viewTextSpan {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 10.5em;
+    margin-bottom: 0;
+ }
 
-.flexy {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+ .box {
+   display: flex;
+   flex-direction: row !important;
+    flex-wrap: nowrap !important;
+ }
 
-.fields {
-  padding-left: 0;
-  padding-right: 0;
-}
+ p.box {
+   margin-bottom: 2px;
+ }
 
-.margin {
-  margin-bottom: 5px;
-}
-
-.doctorWrapper {
-  max-height: 65vh;
-  overflow-y: scroll;
-}
 .infoLine {
   background: #b4dfe5;
   color: #000000;
@@ -91,6 +93,13 @@ p {
   padding: 1.5em;
   border: 1px solid #ced4da;
   border-radius: 0.25em;
+}
+.infoLine:hover {
+  background-color: #a6ccd1;
+  border: 1px solid #ced4da;
+  border-color: #80bdff;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 
 .flex {
@@ -108,6 +117,11 @@ h3 {
 
 .row {
    text-align: left;
+}
+
+.surgeryWrapper {
+  max-height: 65vh;
+  overflow-y: scroll;
 }
 
 .colorWrapper {
