@@ -64,7 +64,7 @@ export default {
        surgeryName:" ",
        surgeon:" ",
        surgeryDate:" ",
-       surgeryDesc:" "
+       surgeryDesc:" ",
      }
    }
  },
@@ -87,7 +87,7 @@ export default {
         this.surgery.surgeryName = '';
         this.surgery.surgeon = '';
         this.surgery.surgeryDate = '';
-        this.surgeryDesc = '';
+        this.surgery.surgeryDesc = '';
   },
  }
 
