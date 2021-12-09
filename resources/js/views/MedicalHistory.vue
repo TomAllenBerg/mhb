@@ -53,6 +53,7 @@ import SurgeryViewCard from '../components/SurgeryViewCard.vue';
       },
       showAlert() {
         this.dismissCountDown = this.dismissSecs
+        this.$refs.surgery.getSurgeries()
       }
     },
  }
