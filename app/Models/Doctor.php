@@ -14,7 +14,8 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'specialty',
-        'location'
+        'location',
+        'UUID'
     ];
 
 }

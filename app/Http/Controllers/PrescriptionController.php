@@ -63,6 +63,8 @@ class PrescriptionController extends Controller
         $prescription->pharmacy = $request->get('pharmacy');
         $prescription->location = $request->get('location');
         $prescription->phone = $request->get('phone');
+        $prescription->UUID = $request->get('UUID');
+
 
 
         $prescription->save();

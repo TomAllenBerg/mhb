@@ -31,6 +31,7 @@ class CreatePrescriptionsTable extends Migration
            $table->string('phone')->nullable($value = true);
            $table->string('pharmacy')->nullable($value = true);
            $table->string('refill')->nullable($value = true);
+           $table->string('UUID');
            $table->timestamps();
 
            //$table->primary(['user_id', 'doctor_id']);

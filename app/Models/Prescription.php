@@ -17,7 +17,8 @@ class Prescription extends Model
         'dosage_unit',
         'route',
         'instructions',
-        'side_effects'
+        'side_effects',
+        'UUID'
     ];
  
 }

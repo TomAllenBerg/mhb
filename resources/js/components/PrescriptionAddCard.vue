@@ -52,7 +52,7 @@
               <label for="PrescribedBy"><strong>Prescribed By</strong></label><br>
               <select class="form-select" aria-label="multiple select example" v-model="prescription.doctor">
                 <option selected>None</option>
-                <option v-for="doctor in doctors" v-bind:value="doctor.name">{{ doctor.name }}</option>
+                <option v-for="doctor in doctors" v-if="doctor.UUID === sessionID" v-bind:value="doctor.name">{{ doctor.name }}</option>
                 <!-- <option selected>select</option> -->
                 <!-- <option value="1">Doctor 1</option>
                 <option value="2">Doctor 2</option>
@@ -178,8 +178,10 @@ export default {
        location:" ",
        phone:" ",
        doctor:" ",
+       UUID: this.$session.get("sessionID") // Sets the UUID associated with the pre. to the current user logged in.
      },
      doctors: [],
+     sessionID: this.$session.get("sessionID"),
 		selected:{
 			doctor:''
 		}

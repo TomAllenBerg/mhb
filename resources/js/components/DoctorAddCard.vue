@@ -66,7 +66,8 @@ export default {
      doctor:{
        name:" ",
        specialty:" ",
-       location:" "
+       location:" ",
+       UUID: this.$session.get("sessionID") // Sets the UUID associated with the doctor to the current user logged in.
      }
    }
  },

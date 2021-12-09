@@ -40,6 +40,7 @@ class DoctorController extends Controller
       $doctor->name = $request->get('name');
       $doctor->specialty = $request->get('specialty');
       $doctor->location = $request->get('location');
+      $doctor->UUID = $request->get('UUID');
 
       $doctor->save();
 

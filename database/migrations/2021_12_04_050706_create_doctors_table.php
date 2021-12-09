@@ -19,6 +19,7 @@ class CreateDoctorsTable extends Migration
             $table->string('name')->nullable($value = true);
             $table->string('specialty')->nullable($value = true);
             $table->string('location')->nullable($value = true);
+            $table->string('UUID');
         });
     }
 
