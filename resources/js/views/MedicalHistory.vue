@@ -36,8 +36,16 @@ import SurgeryViewCard from '../components/SurgeryViewCard.vue';
             return{
             dismissSecs: 5,
             dismissCountDown: 0
-        }
-            },
+          }
+        },
+
+        mounted() {
+          // Reroutes to the home page if not logged in, doesn't allow access to doctors.
+          if (!(this.$session.exists("sessionID"))){
+            this.$router.push({path: '/'});
+          }
+        },
+
         name: 'MedicalHistory',
         components: {
             Sidebar,
