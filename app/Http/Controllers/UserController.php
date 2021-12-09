@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -19,6 +20,7 @@ class UserController extends Controller
         $user = new User;
 
         $user->email = $request->get('email');
+        $user->UUID = $request->get('UUID');
         $user->password = bcrypt($request->get('password'));
         $user->confirm_password = $user->password;
 
@@ -39,5 +41,4 @@ class UserController extends Controller
         };
         abort(401);
     }
-
 }

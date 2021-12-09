@@ -67,14 +67,19 @@ export default {
       user:{
       email: "",
       password: "",
-       }
-    };
+      UUID: ""
+      }
+    }
   },
+  
   // define methods under the `methods` object
   methods: {
     loginUser(){
     let uri = '/api/user/login';
     this.axios.post(uri, this.user).then((response) => {
+      this.$session.set("sessionID", response.data.UUID); // Sets the sessionID to the users UUID on user login.
+      console.log(this.$session.get("sessionID")); // Logs in console the UUID.
+      // this.user.UUID = response.data.UUID; // Sets user.UUID to the UUID after login.
       this.$router.push({path: '/'});
       console.log('logged in successfully');
       console.log(this.user);

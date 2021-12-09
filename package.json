@@ -30,6 +30,8 @@
         "vue-axios": "^3.3.7",
         "vue-multiselect": "^2.1.6",
         "vue-router": "^3.5.3",
+        "vue-sessionstorage": "^1.0.0",
+        "vue-uuid": "^2.0.2",
         "vuex": "^3.6.2"
     }
 }

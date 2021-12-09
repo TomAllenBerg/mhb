@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('confirm_password');
             $table->rememberToken();
+            $table->string('UUID');
             $table->timestamps();
         });
     }

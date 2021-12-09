@@ -60,6 +60,7 @@ import Logo from '../components/Logo.vue';
 import ButtonBlock from '../components/ButtonBlock.vue';
 import Input from '../components/Input.vue';
 import axios from 'axios';
+import { uuid } from 'vue-uuid';
 
 export default {
   name: "Login",
@@ -75,7 +76,8 @@ export default {
       email: "",
       password: "",
       confirm_password: "",
-       }
+      UUID: uuid.v1(),
+      }
     };
   },
   // define methods under the `methods` object
