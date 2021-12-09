@@ -177,6 +177,7 @@ export default {
        pharmacy:" ",
        location:" ",
        phone:" ",
+       doctor:" ",
      },
      doctors: [],
 		selected:{
@@ -209,6 +210,11 @@ export default {
         this.prescription.dosage_unit = '';
         this.prescription.dosage_amt = '';
         this.prescription.name = '';
+        this.prescription.refill = '';
+        this.prescription.pharmacy = '';
+        this.prescription.location = '';
+        this.prescription.phone = '';
+        this.prescription.doctor = '';
   },
   getDoctors() {
       axios.get('/api/doctors').then(response => {
