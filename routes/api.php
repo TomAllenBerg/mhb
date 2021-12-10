@@ -56,7 +56,7 @@ Route::get('/medical_historys', [MedicalHistoryController::class, 'index']);
 Route::post('/surgeries/store', [SurgeryController::class, 'store']);
 Route::get('/surgeries/edit/{id}', [SurgeryController::class, 'edit']);
 Route::post('/surgeries/update/{id}', [SurgeryController::class, 'update']);
-Route::delete('/surgeries/delete/{id}', [SugeryController::class, 'destroy']);
+Route::delete('/surgeries/delete/{id}', [SurgeryController::class, 'destroy']);
 Route::get('/surgeries', [SurgeryController::class, 'index']);
 
 // Routes created to the allergy controller to use functions for modifying and adding entries to the database
