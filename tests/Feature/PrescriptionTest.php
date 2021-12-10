@@ -12,6 +12,18 @@ use Tests\TestCase;
 
 class PrescriptionTest extends TestCase
 {
+    // look at json data in response tab in prescriptions page
+    public function test_index()
+    {
+        $controller = new PrescriptionController();
+        $response = $controller->index();
+
+        $this->assertEquals(200, $response->getStatusCode());
+/*
+        $actualCount = DB::table('prescriptions')->get()->count();
+
+        $this->assertEquals($actualCount, $response.count);*/
+    }
 
     public function test_store()
     {
@@ -28,6 +40,7 @@ class PrescriptionTest extends TestCase
            'phone' => '1234567890',
            'pharmacy' => 'Pharmacy name',
            'refill' => 'Refill info',
+           'UUID' => 'Test',
         ]);
 
         $controller = new PrescriptionController();
@@ -43,7 +56,7 @@ class PrescriptionTest extends TestCase
 
         DB::table('prescriptions')->where('name', '=', 'Unit test')->delete();
     }
-
+/*
     public function test_update()
     {
         DB::table('prescriptions')->insert([
@@ -82,7 +95,7 @@ class PrescriptionTest extends TestCase
 
         DB::table('prescriptions')->where('name', '=', 'Update test 1')->delete();
     }
-
+*/
     public function test_destroy()
     {
         $id = DB::table('prescriptions')->insertGetId([
@@ -96,7 +109,8 @@ class PrescriptionTest extends TestCase
             'location' => 'Pharmacy location',
             'phone' => '1234567890',
             'pharmacy' => 'Pharmacy name',
-            'refill' => 'Refill info'
+            'refill' => 'Refill info',
+            'UUID' => 'Test',
         ]);
 
         $controller = new PrescriptionController();
@@ -104,11 +118,11 @@ class PrescriptionTest extends TestCase
 
         $this->assertEquals(200, $response->getStatusCode());
 
-        //$prescription = DB::table('prescriptions')
-        //            ->where('name', '=', 'Destroy test')
-        //            ->get();
+        /*$prescription = DB::table('prescriptions')
+                    ->where('name', '=', 'Destroy test')
+                    ->get();
 
-        //$this->assertNull($prescription);
+        $this->assertNull($prescription);*/
 
     }
 }
