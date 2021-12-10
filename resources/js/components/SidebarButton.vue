@@ -23,16 +23,16 @@ export default {
     color: #111;
     background: #ffffff00;
     border: none;
-    width: 130px;
-    height: 130px;
+    width: 90px;
+    height: 90px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 12px;
     position: relative;
 }
 
 .pageImage{
-    max-width: 85px;
-    max-height: 85px;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .buttonText{
