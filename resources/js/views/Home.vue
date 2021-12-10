@@ -21,21 +21,21 @@
           <p>Learn more about our mission and who we are.</p>
         </div>
         </button>
-        <button class="gridItemButton" @click="$router.push('prescription')">
+        <button class="gridItemButton" @click="$router.push(prescriptionRoute)">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/PrescriptionIcon.png" id="smallIcon">
           <h1 id="sectionHeading"> Prescriptions</h1>
           <p>View & add prescriptions.</p>
         </div>
         </button>
-        <button class="gridItemButton" @click="$router.push('medical')">
+        <button class="gridItemButton" @click="$router.push(historyRoute)">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/HistoryIcon.png" id="smallIcon">
           <h1 id="sectionHeading"> Medical History</h1>
           <p>View & add to your medical history.</p>
         </div>
         </button>
-        <button class="gridItemButton" @click="$router.push('doctor')">
+        <button class="gridItemButton" @click="$router.push(doctorRoute)">
         <div class="gridItem">
           <img src="../assets/sidebarLogos/DoctorIcon.png" id="smallIcon">
           <h1 id="sectionHeading"> Doctors</h1>
@@ -55,6 +55,30 @@ export default {
   name: 'Home',
   components: {
     Sidebar
+  },
+
+  data() {
+      return {
+        prescriptionRoute: "",
+        doctorRoute: "",
+        historyRoute: ""
+      }
+  },
+
+  mounted() {
+    // On page load if the user is logged in this allows the user to access all pages.
+    if (this.$session.exists("sessionID")){
+      this.prescriptionRoute = "prescription";
+      this.doctorRoute = "doctor";
+      this.historyRoute = "medical";
+      
+    }
+    // If the user is not logged in the user will be redirected to the login page on certain pages.
+    else {
+      this.prescriptionRoute = "login";
+      this.doctorRoute = "login";
+      this.historyRoute = "login";
+    }
   }
 }
 </script>

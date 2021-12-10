@@ -92,11 +92,9 @@ class SurgeryController extends Controller
      * @param  \App\Models\Surgery  $Surgery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Surgery $Surgery)
+    public function destroy($id)
     {
-        $surgeries = Surgery::find($Surgery);
-        $surgeries->delete();
-
+        Surgery::find($id)->delete();
         return response()->json('successfully deleted');
     }
 }

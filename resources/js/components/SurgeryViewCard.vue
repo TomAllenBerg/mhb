@@ -47,6 +47,7 @@ export default {
         })
       },
       deleteData: function(id) {
+        console.log("Problem ID: " + id);
         if(confirm("Are you sure you want to remove the information for this surgery?")) {
            axios.post('/api/surgeries/delete/' + id, {_method: 'DELETE'})
            .then(response => {

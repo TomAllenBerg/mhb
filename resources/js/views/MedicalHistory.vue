@@ -41,9 +41,11 @@ import SurgeryViewCard from '../components/SurgeryViewCard.vue';
 
         mounted() {
           // Reroutes to the home page if not logged in, doesn't allow access to doctors.
+          /*
           if (!(this.$session.exists("sessionID"))){
             this.$router.push({path: 'login'});
           }
+          */
         },
 
         name: 'MedicalHistory',

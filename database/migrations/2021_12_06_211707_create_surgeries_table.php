@@ -15,6 +15,7 @@ class CreateSurgeriesTable extends Migration
     {
         Schema::create('surgeries', function (Blueprint $table) {
             //$table->id();
+            $table->bigIncrements('id');
             $table->string('surgeryName') -> nullable($value = true);
             $table->string('surgeon') -> nullable($value = true);
             $table->string('surgeryDate') -> nullable($value = true);
