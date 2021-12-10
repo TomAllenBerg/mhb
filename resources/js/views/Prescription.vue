@@ -70,9 +70,11 @@ export default {
 
   mounted() {
     // Reroutes to the home page if not logged in, doesn't allow access to prescriptions.
+    /*
     if (!(this.$session.exists("sessionID"))){
       this.$router.push({path: 'login'});
     }
+    */
   },
 
   methods: {

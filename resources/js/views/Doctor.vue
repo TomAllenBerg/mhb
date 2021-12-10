@@ -64,13 +64,15 @@ export default {
         dismissSecs: 5,
         dismissCountDown: 0
       }
-    },
+  },
 
   mounted() {
     // Reroutes to the home page if not logged in, doesn't allow access to doctors.
+    /*
     if (!(this.$session.exists("sessionID"))){
       this.$router.push({path: 'login'});
     }
+    */
   },
 
   methods: {
