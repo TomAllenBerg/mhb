@@ -29,6 +29,7 @@ class MedicalHistoryTest extends TestCase
     {
         $request = Request::create('/api/medical_history/store', 'POST',[
 
+            'UUID' => 'Test',
             'name' => 'Test',
             'DOB' => 'Test',
             'bloodType' => 'Test',
@@ -40,12 +41,12 @@ class MedicalHistoryTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
 
         $prescription = DB::table('medical_historys')
-                    ->where('name', '=', 'Test')
+                    ->where('UUID', '=', 'Test')
                     ->get();
 
         $this->assertNotNull($prescription);
 
-        DB::table('medical_historys')->where('name', '=', 'Test')->delete();
+        DB::table('medical_historys')->where('UUID', '=', 'Test')->delete();
     }
 /*
     public function test_destroy()

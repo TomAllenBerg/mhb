@@ -28,7 +28,7 @@ class ConditionTest extends TestCase
     public function test_store()
     {
         $request = Request::create('/api/conditions/store', 'POST',[
-
+            'UUID' => 'Test',
            'conditions' => 'Test',
         ]);
 
@@ -38,12 +38,12 @@ class ConditionTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
 
         $prescription = DB::table('conditions')
-                    ->where('conditions', '=', 'Test')
+                    ->where('UUID', '=', 'Test')
                     ->get();
 
         $this->assertNotNull($prescription);
 
-        DB::table('conditions')->where('conditions', '=', 'Test')->delete();
+        DB::table('conditions')->where('UUID', '=', 'Test')->delete();
     }
 /*
     public function test_destroy()

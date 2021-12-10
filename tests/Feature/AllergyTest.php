@@ -28,7 +28,7 @@ class AllergyTest extends TestCase
     public function test_store()
     {
         $request = Request::create('/api/allergies/store', 'POST',[
-
+            'UUID' => 'Test',
            'allergies' => 'Test',
         ]);
 
@@ -38,12 +38,12 @@ class AllergyTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
 
         $prescription = DB::table('allergies')
-                    ->where('allergies', '=', 'Test')
+                    ->where('UUID', '=', 'Test')
                     ->get();
 
         $this->assertNotNull($prescription);
 
-        DB::table('allergies')->where('allergies', '=', 'Test')->delete();
+        DB::table('allergies')->where('UUID', '=', 'UUID')->delete();
     }
 /*
     public function test_destroy()

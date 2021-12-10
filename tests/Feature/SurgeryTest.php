@@ -29,6 +29,7 @@ class SurgeryTest extends TestCase
     {
         $request = Request::create('/api/surgeries/store', 'POST',[
 
+            'UUID' => 'Test',
             'surgeryName' => 'Test',
             'surgeon' => 'Test',
             'surgeryDate' => 'Test',
@@ -41,12 +42,12 @@ class SurgeryTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
 
         $prescription = DB::table('surgeries')
-                    ->where('surgeryName', '=', 'Test')
+                    ->where('UUID', '=', 'Test')
                     ->get();
 
         $this->assertNotNull($prescription);
 
-        DB::table('surgeries')->where('surgeryName', '=', 'Test')->delete();
+        DB::table('surgeries')->where('UUID', '=', 'Test')->delete();
     }
 /*
     public function test_destroy()
