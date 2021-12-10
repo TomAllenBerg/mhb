@@ -40,6 +40,7 @@ class MedicalHistoryController extends Controller
         $medHistory->name = $request->get('name');
         $medHistory->DOB = $request->get('DOB');
         $medHistory->bloodType = $request->get('bloodType');
+        $medHistory->UUID = $request->get('UUID');
     
         $medHistory->save();
   

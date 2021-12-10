@@ -37,8 +37,10 @@ class ConditionController extends Controller
     public function store(Request $request)
     {
         $conditions = new Condition;
-        $var = (array)($request->get('condition'));
+        $var = (array)($request->get('conditions'));
         $conditions->conditions = serialize($var);
+        $conditions->UUID = $request->get('UUID');
+
 
         $conditions->save();
   

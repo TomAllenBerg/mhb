@@ -61,12 +61,15 @@ export default {
               medical:{
               name:" ",
               dob:" ",
+              UUID: this.$session.get("sessionID") // Sets the UUID associated with the basic info to the current user logged in.
               },
               allergy:{
-                allergies:[]
+                allergies:[],
+                UUID: this.$session.get("sessionID") // Sets the UUID associated with the allergy to the current user logged in.
               },
               condition:{
-                conditions:[]
+                conditions:[],
+                UUID: this.$session.get("sessionID") // Sets the UUID associated with the condition to the current user logged in.
               },
               conditions: [
                   {
@@ -353,8 +356,8 @@ export default {
    },
    addPost2(){
      let uri = '/api/allergies/store';
-     let array = Object.values(this.allergy)
-     this.axios.post(uri, array).then((response) => {
+     //let array = Object.values(this.allergy)
+     this.axios.post(uri, this.allergy).then((response) => {
        this.$bvModal.hide('modal-1')
        this.$emit('success-alert')
      }).catch(function(error) {
@@ -363,8 +366,8 @@ export default {
    },
      addPost3(){
      let uri = '/api/conditions/store';
-     let array = Object.values(this.condition)
-     this.axios.post(uri, array).then((response) => {
+     //let array = Object.values(this.condition)
+     this.axios.post(uri, this.condition).then((response) => {
        this.$bvModal.hide('modal-1')
        this.$emit('success-alert')
      }).catch(function(error) {

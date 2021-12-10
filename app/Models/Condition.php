@@ -12,6 +12,7 @@ class Condition extends Model
     public $timestamps = true;
 
     protected $fillable = [ 
-        'condition'
+        'condition',
+        'UUID',
     ];
 }

@@ -18,6 +18,7 @@ class CreateMedicalHistorysTable extends Migration
             $table->string('name')->primary();
             $table->string('DOB');
             $table->string('bloodType') -> nullable($value = true);
+            $table->string('UUID');
             $table->timestamps();
         });
 

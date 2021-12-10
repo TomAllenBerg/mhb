@@ -12,6 +12,7 @@ class Allergy extends Model
     public $timestamps = true;
 
     protected $fillable = [ 
-        'allergies'
+        'allergies',
+        'UUID',
     ];
 }

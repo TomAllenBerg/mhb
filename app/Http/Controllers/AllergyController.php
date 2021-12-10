@@ -39,6 +39,9 @@ class AllergyController extends Controller
         $allergies = new Allergy;
         $var = (array)($request->get('allergies'));
         $allergies->allergies = serialize($var);
+        $allergies->UUID = $request->get('UUID');
+        
+
     
         $allergies->save();
   

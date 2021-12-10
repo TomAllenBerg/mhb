@@ -17,5 +17,6 @@ class MedicalHistory extends Model
         'bloodType',
         'allergies',
         'conditions',
+        'UUID',
     ];
 }
