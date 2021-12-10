@@ -5,16 +5,20 @@
     <SidebarButton text = "Prescriptions" v-bind:page="this.prescriptionRoute" imageSource = "PrescriptionIcon.png"/>
     <SidebarButton text = "Medical History" v-bind:page="this.historyRoute" imageSource = "HistoryIcon.png"/>
     <SidebarButton text = "Doctors" v-bind:page="this.doctorRoute" imageSource = "DoctorIcon.png"/>
+    <LogoutButton text = "Logout" page = "/" imageSource = "LogoutIcon.png"/>
+
   </div>
 </template>
 
 <script>
 import SidebarButton from './SidebarButton'
+import LogoutButton from './LogoutButton'
 
 export default {
   name: 'Sidebar',
   components:  {
-    SidebarButton
+    SidebarButton,
+    LogoutButton
   },
 
    data() {
