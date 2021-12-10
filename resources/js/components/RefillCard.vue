@@ -9,7 +9,7 @@
         </b-row>
         <b-row>
           <b-col>
-            <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-prescription-bottle"></i> Pharmacy Name:&emsp;</span>{{refill.name}}</p>
+            <p class="box"><span class="viewTextSpan"><i class="fas fa-fw fa-prescription-bottle"></i> Pharmacy Name:&emsp;</span>{{refill.pharmacy}}</p>
           </b-col>
         </b-row>
         <b-row>
