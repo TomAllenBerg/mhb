@@ -20,6 +20,7 @@ class CreateSurgeriesTable extends Migration
             $table->string('surgeon') -> nullable($value = true);
             $table->string('surgeryDate') -> nullable($value = true);
             $table->text('surgeryDesc') -> nullable($value = true);
+            $table->string('UUID');
             $table->timestamps();
         });
     }

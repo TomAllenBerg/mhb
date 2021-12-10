@@ -16,5 +16,6 @@ class Surgery extends Model
         'surgeon',
         'surgeryDate',
         'surgeryDesc',
+        'UUID'
     ];
 }

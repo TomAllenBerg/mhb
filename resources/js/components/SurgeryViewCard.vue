@@ -6,7 +6,7 @@
       </div>
 
       <b-container class="bv-example-row surgeryWrapper" >
-        <b-row v-for="(result, index) in results">
+        <b-row v-for="(result, index) in results" v-if="result.UUID === sessionID">
           <b-col>
             <div class="infoLine">
               <p class="margin">This is the info for<strong> Surgeries{{result.id}}</strong></p>
@@ -34,7 +34,8 @@ export default {
   name: "SurgeryViewCard",
   data: function() {
          return  {
-           results: []
+           results: [],
+           sessionID: this.$session.get("sessionID")
          }
     },
   mounted: function() {

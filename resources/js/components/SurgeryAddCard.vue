@@ -65,6 +65,7 @@ export default {
        surgeon:" ",
        surgeryDate:" ",
        surgeryDesc:" ",
+       UUID: this.$session.get("sessionID") // Sets the UUID associated with the surgery to the current user logged in.
      }
    }
  },

@@ -41,6 +41,7 @@ class SurgeryController extends Controller
         $surgeries->surgeon = $request->get('surgeon');
         $surgeries->surgeryDate = $request->get('surgeryDate');
         $surgeries->surgeryDesc = $request->get('surgeryDesc');
+        $surgeries->UUID = $request->get('UUID');
 
   
         $surgeries->save();
